@@ -66,6 +66,8 @@ public class VACMFrame extends JFrame {
 			
 			Image image = Toolkit.getDefaultToolkit().getImage("/res/icon.png");
 			
+			TrayIcon trayIcon = new TrayIcon(image.getScaledInstance(image.getWidth(null), -1, Image.SCALE_SMOOTH));
+			
 			PopupMenu popupMenu = new PopupMenu();
 			
 			MenuItem exit = new MenuItem("Exit");
