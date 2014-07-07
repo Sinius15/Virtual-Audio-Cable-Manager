@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VACEditFrame extends JFrame {
 	
@@ -20,7 +22,7 @@ public class VACEditFrame extends JFrame {
 
 	private VirtualAudioCable cable;
 	
-	public VACEditFrame(VirtualAudioCable cable) {
+	public VACEditFrame(VirtualAudioCable cab) {
 		setResizable(false);
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -29,7 +31,7 @@ public class VACEditFrame extends JFrame {
 				VirtualAudioCableManager.getManager().frame.requestFocus();
 			}
 		});
-		this.cable = cable;
+		this.cable = cab;
 		setTitle("Virtual Audio Cable (" + cable.getName() + ")");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 416, 240);
@@ -116,6 +118,11 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(priority);
 		
 		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VirtualAudioCable newCab = new VirtualAudioCable(cable.getName());
+			}
+		});
 		btnSave.setBounds(278, 178, 89, 23);
 		contentPane.add(btnSave);
 		
