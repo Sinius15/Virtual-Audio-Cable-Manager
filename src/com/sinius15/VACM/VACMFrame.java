@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowStateListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -64,10 +65,10 @@ public class VACMFrame extends JFrame {
 		JButton btnStopAll = new JButton("Stop All");
 		panel.add(btnStopAll);
 		
-		Image icon;
+		BufferedImage icon;
 		try {
 			icon = ImageIO.read(new File("/res/icon.png"));
-			System.out.println(icon.getHeight(null));
+			System.out.println(icon.getWidth());
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
