@@ -13,9 +13,14 @@ public enum Argument {
 	Priority("Priority");
 	
 	private String title;
+	private String value;
 	
 	Argument(String title){
-		
+		this.title = title;
+	}
+	Argument(String title, String value) {
+		this.title = title;
+		this.setValue(value);
 	}
 
 	public String getTitle() {
@@ -24,6 +29,12 @@ public enum Argument {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getValue() {
+		return value;
+	}
+	public void setValue(String value) {
+		this.value = value;
 	}
 	
 }
