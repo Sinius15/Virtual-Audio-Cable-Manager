@@ -68,7 +68,7 @@ public class VACMFrame extends JFrame {
 			
 			Image image = null;
 			try {
-				image = ImageIO.read(new File("/res/icon.png"));
+				image = ImageIO.read(getClass().getResource("/res/icon.png"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
