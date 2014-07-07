@@ -166,6 +166,18 @@ public class VACEditFrame extends JFrame {
 				if(!a.equals("12"))
 					newCab.setArgument(Argument.Buffers, a);
 				
+				//Channel Config
+				a = (String) channelConfig.getSelectedItem();
+				if(checkInt(a)) return;
+				if(!a.equals("Stereo"))
+					newCab.setArgument(Argument.ChanCfg, a);
+				
+				//Channel Config
+				a = (String) priority.getSelectedItem();
+				if(checkInt(a)) return;
+				if(!a.equals("Normal"))
+					newCab.setArgument(Argument.Priority, a);
+				
 				
 			}
 		});
