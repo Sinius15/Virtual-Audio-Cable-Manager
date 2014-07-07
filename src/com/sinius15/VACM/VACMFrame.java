@@ -71,6 +71,7 @@ public class VACMFrame extends JFrame {
 				}
 				VirtualAudioCable cable = new VirtualAudioCable(name);
 				VirtualAudioCableManager.getManager().cables.add(cable);
+				updateList();
 			}
 		});
 		bottom.add(btnAdd);
