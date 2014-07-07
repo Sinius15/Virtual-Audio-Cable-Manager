@@ -65,6 +65,13 @@ public class VirtualAudioCable {
 		arguments.put(a, value);
 	}
 	
+	public String getArgument(Argument a){
+		String out = arguments.get(a);
+		if(out == null)
+			return a.getDefaul();
+		return out;
+	}
+	
 	public String getName() {
 		return name;
 	}
