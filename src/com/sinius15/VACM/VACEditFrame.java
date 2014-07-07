@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
@@ -133,19 +134,18 @@ public class VACEditFrame extends JFrame {
 				
 				//input
 				String a = (String) waveIn.getSelectedItem();
-				Argument b = Argument.Input;
 				if(!a.equals("Default")){
-					b.setValue(a);
-					newCab.setArgument(b);
+					newCab.setArgument(Argument.Input, a);
 				}
 				
 				//output
 				a = (String) waveOut.getSelectedItem();
-				b = Argument.Output;
 				if(!a.equals("Default")){
-					b.setValue(a);
-					newCab.setArgument(b);
+					newCab.setArgument(Argument.Output, a);
 				}
+				
+				//SampleRate
+				che
 				
 			}
 		});
@@ -156,6 +156,15 @@ public class VACEditFrame extends JFrame {
 		btnCancel.setBounds(179, 178, 89, 23);
 		contentPane.add(btnCancel);
 	}
+	
+	private boolean checkInt(String input){
+		if(!input.matches("[0-9]+")){
+			JOptionPane.showMessageDialog(this, "Some of the feelds may only contain numbers. Please change your input.", "Fatal Error", JOptionPane.ERROR_MESSAGE);
+			return true;
+		}
+		return false;
+	}
+	
 	public JComboBox<String> getPriority() {
 		return priority;
 	}
