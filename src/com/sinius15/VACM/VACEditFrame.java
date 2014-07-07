@@ -129,7 +129,7 @@ public class VACEditFrame extends JFrame {
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VirtualAudioCable newCab = new VirtualAudioCable(cable.getName());
-				//waveIn.getSelectedItem();
+				waveIn.getSelectedItem();
 			}
 		});
 		btnSave.setBounds(278, 178, 89, 23);
@@ -139,28 +139,28 @@ public class VACEditFrame extends JFrame {
 		btnCancel.setBounds(179, 178, 89, 23);
 		contentPane.add(btnCancel);
 	}
-	public JComboBox getPriority() {
+	public JComboBox<String> getPriority() {
 		return priority;
 	}
-	public JComboBox getBufferMs() {
+	public JComboBox<String> getBufferMs() {
 		return bufferMs;
 	}
-	public JComboBox getChannelConfig() {
+	public JComboBox<String> getChannelConfig() {
 		return channelConfig;
 	}
 	public JSpinner getBuffers() {
 		return buffers;
 	}
-	public JComboBox getSampleRate() {
+	public JComboBox<String> getSampleRate() {
 		return sampleRate;
 	}
-	public JComboBox getWaveIn() {
+	public JComboBox<String> getWaveIn() {
 		return waveIn;
 	}
-	public JComboBox getWaveOut() {
+	public JComboBox<String> getWaveOut() {
 		return waveOut;
 	}
-	public JComboBox getBitsPerSample() {
+	public JComboBox<String> getBitsPerSample() {
 		return bitsPerSample;
 	}
 }
