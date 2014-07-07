@@ -58,9 +58,8 @@ public class VirtualAudioCableManager {
 		
 		javax.sound.sampled.Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
 		 
-		for(int i = 0; i < mixerInfo.length; i++)
-		{
-		     System.out.println(mixerInfo[i].getName());
+		for(int i = 0; i < mixerInfo.length; i++){
+		     System.out.println(mixerInfo[i].getDescription());
 		}
 		
 		thiss = new VirtualAudioCableManager();
