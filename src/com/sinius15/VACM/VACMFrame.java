@@ -192,8 +192,4 @@ public class VACMFrame extends JFrame {
 	public JTextField getExField() {
 		return textField;
 	}
-	
-	public JList getCableList() {
-		return cableList;
-	}
 }
