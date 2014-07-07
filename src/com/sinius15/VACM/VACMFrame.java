@@ -84,7 +84,10 @@ public class VACMFrame extends JFrame {
 		JButton btnRemove = new JButton("Remove");
 		btnRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				VirtualAudioCable cable = cableList.getSelectedValue();
+				if(cable == null)
+					return;
+				VirtualAudioCableManager.getManager().cables.remove(cable);
 			}
 		});
 		bottom.add(btnRemove);
