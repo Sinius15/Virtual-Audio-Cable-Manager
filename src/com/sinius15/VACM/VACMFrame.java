@@ -61,6 +61,7 @@ public class VACMFrame extends JFrame {
 							"The name must exist of only letters!", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
+				
 			}
 		});
 		bottom.add(btnAdd);
