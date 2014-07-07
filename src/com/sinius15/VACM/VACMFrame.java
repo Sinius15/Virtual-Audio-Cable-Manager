@@ -65,13 +65,10 @@ public class VACMFrame extends JFrame {
 		JButton btnStopAll = new JButton("Stop All");
 		panel.add(btnStopAll);
 		
-		BufferedImage icon;
 		try {
-			icon = ImageIO.read(new File("res/icon.png"));
-			System.out.println(icon.getWidth());
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+			BufferedImage icon = ImageIO.read(new File("res/icon.png"));
+			setIconImage(icon);
+		} catch (IOException e1) {}
 		
 		
 
