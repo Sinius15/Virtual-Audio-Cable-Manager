@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -52,7 +53,9 @@ public class VACMFrame extends JFrame {
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				JOptionPane.showInternalInputDialog(VirtualAudioCableManager.getManager().frame, 
+						"What is the title of this new AudioRepeater? " + System.lineSeparator() + 
+						"The name must exist of only letters!", "name?", JOptionPane.QUESTION_MESSAGE);
 			}
 		});
 		bottom.add(btnAdd);
