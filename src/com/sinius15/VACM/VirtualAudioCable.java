@@ -19,6 +19,7 @@ public class VirtualAudioCable {
 		if (!windowName.matches("[a-zA-Z]+"))
 			throw new IllegalArgumentException("windowName must exist of letters.");
 		arguments.put("WindowName:", "\"" + windowName + "\"");
+		arguments.put("Autostart", null);
 		this.name = windowName;
 	}
 
