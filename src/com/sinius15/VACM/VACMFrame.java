@@ -10,6 +10,9 @@ import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowStateListener;
 
@@ -86,14 +89,15 @@ public class VACMFrame extends JFrame {
 			trayIcon = new TrayIcon(image, "Virtual Audio Cable Manager", popup);
 			trayIcon.setImageAutoSize(true);
 			
-			trayIcon.addActionListener(new ActionListener() {
-				
+			trayIcon.addMouseListener(new MouseAdapter() {
 				@Override
-				public void actionPerformed(ActionEvent e) {
+				public void mouseClicked(MouseEvent e) {
 					tray.remove(trayIcon);
 					setVisible(true);
 					requestFocus();
+					super.mouseClicked(e);
 				}
+				
 			});
 			
 			addWindowStateListener(new WindowStateListener() {
