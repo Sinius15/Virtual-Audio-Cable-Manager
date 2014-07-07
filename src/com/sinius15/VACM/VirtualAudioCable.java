@@ -23,6 +23,10 @@ public class VirtualAudioCable {
 		this.name = windowName;
 	}
 
+	public void setArgument(Argument a){
+		arguments.put(a.getTitle(), a.getValue());
+	}
+	
 	public String getName() {
 		return name;
 	}
