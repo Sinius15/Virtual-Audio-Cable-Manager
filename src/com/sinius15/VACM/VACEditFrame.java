@@ -87,7 +87,7 @@ public class VACEditFrame extends JFrame {
 		
 		bitsPerSample = new JComboBox<String>();
 		bitsPerSample.setModel(new DefaultComboBoxModel<String>(new String[] {"8", "16", "18", "20", "22", "24", "32"}));
-		bitsPerSample.setSelectedIndex(1);
+		bitsPerSample.setSelectedItem(cable.getArgument(Argument.BitsPerSample));
 		bitsPerSample.setEditable(true);
 		bitsPerSample.setBounds(95, 101, 55, 20);
 		contentPane.add(bitsPerSample);
