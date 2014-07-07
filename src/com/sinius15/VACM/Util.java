@@ -28,13 +28,15 @@ public class Util {
 	public static String[] getOutputDeviceNames(){
 		Info[] mixerInfo = AudioSystem.getMixerInfo();
 
-		int amount = 0;
+		int amount = 2;
 		for(Info i : mixerInfo){
 			if(i.getDescription().equals("Direct Audio Device: DirectSound Playback"))
 				amount++;
 		}
 		String[] out = new String[amount];
-		amount = 0;
+		out[0] = "Default";
+		out[0] = "None";
+		amount = 1;
 		for(Info i : mixerInfo){
 			if(i.getDescription().equals("Direct Audio Device: DirectSound Playback")){
 				out[amount] = i.getName();
