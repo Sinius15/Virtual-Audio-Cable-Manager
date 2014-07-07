@@ -32,10 +32,22 @@ public class VirtualAudioCable {
 		for(String key : arguments.keySet()){
 			args[i] = "/" + key;
 			if(arguments.get(i) != null)
-				args[i] += " " + arguments.get(i);
+				args[i] += ": " + arguments.get(i);
 		}
 		
 		ProcessBuilder builder = new ProcessBuilder(args);
+		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
+		builder.redirectErrorStream(true);
+		
+		try {
+			builder.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void stopAudioCable(){
+		ProcessBuilder builder = new ProcessBuilder("start audiorepeater.exe /CloseInstance");
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
 		builder.redirectErrorStream(true);
 		
