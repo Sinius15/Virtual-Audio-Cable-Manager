@@ -99,7 +99,6 @@ public class VACMFrame extends JFrame {
 				VirtualAudioCable cable = cableList.getSelectedValue();
 				if(cable == null)
 					return;
-				
 				VACEditFrame frame = new VACEditFrame(cable);
 				thiss.setEnabled(false);
 				frame.setVisible(true);
