@@ -189,6 +189,12 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(btnSave);
 		
 		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				thiss.dispose();
+				thiss.getWindowListeners()[0].windowClosing(null);
+			}
+		});
 		btnCancel.setBounds(179, 178, 89, 23);
 		contentPane.add(btnCancel);
 	}
