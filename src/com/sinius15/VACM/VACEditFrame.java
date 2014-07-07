@@ -57,6 +57,7 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(lblWaveIn);
 		
 		waveIn = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getInputDeviceNames()));
+		waveIn.setSelectedItem(cable.getArgument(Argument.Input));
 		waveIn.setBounds(65, 11, 237, 20);
 		contentPane.add(waveIn);
 		
@@ -65,6 +66,7 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(lblWaveOut);
 		
 		waveOut = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getOutputDeviceNames()));
+		waveOut.setSelectedItem(cable.getArgument(Argument.Output));
 		waveOut.setBounds(65, 39, 237, 20);
 		contentPane.add(waveOut);
 		
@@ -74,7 +76,7 @@ public class VACEditFrame extends JFrame {
 		
 		sampleRate = new JComboBox<String>();
 		sampleRate.setModel(new DefaultComboBoxModel<String>(new String[] {"5000", "8000", "11025", "22050", "44100", "48000", "88200", "96000", "192000"}));
-		sampleRate.setSelectedIndex(5);
+		sampleRate.setSelectedItem(cable.getArgument(Argument.SamplingRate));
 		sampleRate.setEditable(true);
 		sampleRate.setBounds(75, 70, 75, 20);
 		contentPane.add(sampleRate);
