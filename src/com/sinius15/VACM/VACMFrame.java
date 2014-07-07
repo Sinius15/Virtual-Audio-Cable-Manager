@@ -2,6 +2,7 @@ package com.sinius15.VACM;
 
 import java.awt.AWTException;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
@@ -23,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 public class VACMFrame extends JFrame {
 	
@@ -36,32 +38,44 @@ public class VACMFrame extends JFrame {
 		setTitle("Virtual Audio Cable Manager");
 		setBounds(100, 100, 402, 403);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		getContentPane().add(scrollPane, BorderLayout.CENTER);
+		JScrollPane center = new JScrollPane();
+		getContentPane().add(center, BorderLayout.CENTER);
 		
 		JList<VirtualAudioCable> cableList = new JList<VirtualAudioCable>();
-		scrollPane.setViewportView(cableList);
+		center.setViewportView(cableList);
 		
 		JLabel lblAudioCables = new JLabel("Audio Cables: ");
-		scrollPane.setColumnHeaderView(lblAudioCables);
+		center.setColumnHeaderView(lblAudioCables);
 		
-		JPanel panel = new JPanel();
-		getContentPane().add(panel, BorderLayout.SOUTH);
+		JPanel bottom = new JPanel();
+		getContentPane().add(bottom, BorderLayout.SOUTH);
 		
 		JButton btnAdd = new JButton("Add");
-		panel.add(btnAdd);
+		bottom.add(btnAdd);
 		
 		JButton btnRemove = new JButton("Remove");
-		panel.add(btnRemove);
+		bottom.add(btnRemove);
 		
 		JButton btnEdit = new JButton("Edit");
-		panel.add(btnEdit);
+		bottom.add(btnEdit);
 		
 		JButton btnStartAll = new JButton("Start All");
-		panel.add(btnStartAll);
+		bottom.add(btnStartAll);
 		
 		JButton btnStopAll = new JButton("Stop All");
-		panel.add(btnStopAll);
+		bottom.add(btnStopAll);
+		
+		JPanel top = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) top.getLayout();
+		flowLayout.setAlignment(FlowLayout.LEFT);
+		getContentPane().add(top, BorderLayout.NORTH);
+		
+		JLabel lblAudioRepeaterExcecutable = new JLabel("Audio Repeater Excecutable");
+		top.add(lblAudioRepeaterExcecutable);
+		
+		textField = new JTextField();
+		top.add(textField);
+		textField.setColumns(28);
 		
 		BufferedImage icon = null;
 		
@@ -143,5 +157,6 @@ public class VACMFrame extends JFrame {
 	}
 	
 	private static final long serialVersionUID = 2595653495897980319L;
+	private JTextField textField;
 	
 }
