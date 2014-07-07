@@ -65,6 +65,7 @@ public class VACMFrame extends JFrame {
 			tray = SystemTray.getSystemTray();
 			
 			Image image = Toolkit.getDefaultToolkit().getImage("/res/icon.png");
+			
 			PopupMenu popupMenu = new PopupMenu();
 			
 			MenuItem exit = new MenuItem("Exit");
