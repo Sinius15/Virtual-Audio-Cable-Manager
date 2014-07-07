@@ -15,9 +15,9 @@ public enum Argument {
 	WindowName("WindowName"),
 	Autostart("Autostart");
 	
-	private String title;
+	private String title, defaul;
 	
-	Argument(String title){
+	Argument(String title, String defaul){
 		this.title = title;
 	}
 	
