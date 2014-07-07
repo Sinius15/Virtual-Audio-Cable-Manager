@@ -182,7 +182,7 @@ public class VACEditFrame extends JFrame {
 				VirtualAudioCableManager.getManager().cables.add(newCab);
 				
 				thiss.dispose();
-				
+				thiss.getWindowListeners()[0].windowClosing(null);
 			}
 		});
 		btnSave.setBounds(278, 178, 89, 23);
