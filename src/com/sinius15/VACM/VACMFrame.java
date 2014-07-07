@@ -66,7 +66,8 @@ public class VACMFrame extends JFrame {
 							"The name must be uniqe.", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				
+				VirtualAudioCable cable = new VirtualAudioCable(name);
+				boolean index = VirtualAudioCableManager.getManager().cables.add(cable);
 			}
 		});
 		bottom.add(btnAdd);
