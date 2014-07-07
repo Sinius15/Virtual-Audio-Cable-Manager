@@ -134,18 +134,19 @@ public class VACEditFrame extends JFrame {
 				
 				//input
 				String a = (String) waveIn.getSelectedItem();
-				if(!a.equals("Default")){
+				if(!a.equals("Default"))
 					newCab.setArgument(Argument.Input, a);
-				}
 				
 				//output
 				a = (String) waveOut.getSelectedItem();
-				if(!a.equals("Default")){
+				if(!a.equals("Default"))
 					newCab.setArgument(Argument.Output, a);
-				}
 				
 				//SampleRate
-				che
+				a = (String)sampleRate.getSelectedItem();
+				if(checkInt(a)) return;
+				if(!a.equals("48000"))
+					newCab.setArgument(Argument.SamplingRate, a);
 				
 			}
 		});
