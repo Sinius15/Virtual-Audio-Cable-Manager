@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -129,7 +130,12 @@ public class VACEditFrame extends JFrame {
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VirtualAudioCable newCab = new VirtualAudioCable(cable.getName());
-				waveIn.getSelectedItem();
+				String a = (String) waveIn.getSelectedItem();
+				Argument b = Argument.Input;
+				
+				if(!a.equals("Default")){
+					b.setValue(a);
+				}
 			}
 		});
 		btnSave.setBounds(278, 178, 89, 23);
