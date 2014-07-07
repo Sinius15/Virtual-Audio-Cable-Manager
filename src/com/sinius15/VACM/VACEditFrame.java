@@ -21,6 +21,14 @@ public class VACEditFrame extends JFrame {
 	private JPanel contentPane;
 
 	private VirtualAudioCable cable;
+	private JComboBox<String> priority;
+	private JComboBox<String> bufferMs;
+	private JComboBox<String> channelConfig;
+	private JSpinner buffers;
+	private JComboBox<String> sampleRate;
+	private JComboBox<String> waveIn;
+	private JComboBox<String> waveOut;
+	private JComboBox<String> bitsPerSample;
 	
 	public VACEditFrame(VirtualAudioCable cab) {
 		setResizable(false);
@@ -44,7 +52,7 @@ public class VACEditFrame extends JFrame {
 		lblWaveIn.setBounds(10, 14, 75, 14);
 		contentPane.add(lblWaveIn);
 		
-		JComboBox<String> waveIn = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getInputDeviceNames()));
+		waveIn = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getInputDeviceNames()));
 		waveIn.setBounds(65, 11, 237, 20);
 		contentPane.add(waveIn);
 		
@@ -52,7 +60,7 @@ public class VACEditFrame extends JFrame {
 		lblWaveOut.setBounds(10, 42, 75, 14);
 		contentPane.add(lblWaveOut);
 		
-		JComboBox<String> waveOut = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getOutputDeviceNames()));
+		waveOut = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getOutputDeviceNames()));
 		waveOut.setBounds(65, 39, 237, 20);
 		contentPane.add(waveOut);
 		
@@ -60,7 +68,7 @@ public class VACEditFrame extends JFrame {
 		lblSampleRate.setBounds(10, 73, 75, 14);
 		contentPane.add(lblSampleRate);
 		
-		JComboBox<String> sampleRate = new JComboBox<String>();
+		sampleRate = new JComboBox<String>();
 		sampleRate.setModel(new DefaultComboBoxModel<String>(new String[] {"5000", "8000", "11025", "22050", "44100", "48000", "88200", "96000", "192000"}));
 		sampleRate.setSelectedIndex(5);
 		sampleRate.setEditable(true);
@@ -71,7 +79,7 @@ public class VACEditFrame extends JFrame {
 		lblBitsPerSample.setBounds(10, 104, 75, 14);
 		contentPane.add(lblBitsPerSample);
 		
-		JComboBox<String> bitsPerSample = new JComboBox<String>();
+		bitsPerSample = new JComboBox<String>();
 		bitsPerSample.setModel(new DefaultComboBoxModel<String>(new String[] {"8", "16", "18", "20", "22", "24", "32"}));
 		bitsPerSample.setSelectedIndex(1);
 		bitsPerSample.setEditable(true);
@@ -82,13 +90,13 @@ public class VACEditFrame extends JFrame {
 		lblChannelConfig.setBounds(10, 134, 75, 14);
 		contentPane.add(lblChannelConfig);
 		
-		JComboBox<String> channelConfig = new JComboBox<String>();
+		channelConfig = new JComboBox<String>();
 		channelConfig.setModel(new DefaultComboBoxModel<String>(new String[] {"Mono", "Stereo", "Quadraphonic", "Surround", "5.1 back", "5.1 surround", "7.1 wide", "7.1 surround"}));
 		channelConfig.setSelectedIndex(1);
 		channelConfig.setBounds(90, 130, 96, 20);
 		contentPane.add(channelConfig);
 		
-		JComboBox<String> bufferMs = new JComboBox<String>();
+		bufferMs = new JComboBox<String>();
 		bufferMs.setModel(new DefaultComboBoxModel<String>(new String[] {"50", "100", "200", "400", "500", "800", "1000", "2000", "4000", "8000"}));
 		bufferMs.setSelectedIndex(4);
 		bufferMs.setEditable(true);
@@ -99,7 +107,7 @@ public class VACEditFrame extends JFrame {
 		lblTotalBufferms.setBounds(201, 73, 81, 14);
 		contentPane.add(lblTotalBufferms);
 		
-		JSpinner buffers = new JSpinner();
+		buffers = new JSpinner();
 		buffers.setModel(new SpinnerNumberModel(new Integer(12), new Integer(1), null, new Integer(1)));
 		buffers.setBounds(321, 101, 46, 20);
 		contentPane.add(buffers);
@@ -112,7 +120,7 @@ public class VACEditFrame extends JFrame {
 		lblPriority.setBounds(251, 134, 46, 14);
 		contentPane.add(lblPriority);
 		
-		JComboBox<String> priority = new JComboBox<String>();
+		priority = new JComboBox<String>();
 		priority.setModel(new DefaultComboBoxModel<String>(new String[] {"Normal", "High", "Realtime"}));
 		priority.setBounds(292, 131, 75, 20);
 		contentPane.add(priority);
@@ -130,5 +138,29 @@ public class VACEditFrame extends JFrame {
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setBounds(179, 178, 89, 23);
 		contentPane.add(btnCancel);
+	}
+	public JComboBox getPriority() {
+		return priority;
+	}
+	public JComboBox getBufferMs() {
+		return bufferMs;
+	}
+	public JComboBox getChannelConfig() {
+		return channelConfig;
+	}
+	public JSpinner getBuffers() {
+		return buffers;
+	}
+	public JComboBox getSampleRate() {
+		return sampleRate;
+	}
+	public JComboBox getWaveIn() {
+		return waveIn;
+	}
+	public JComboBox getWaveOut() {
+		return waveOut;
+	}
+	public JComboBox getBitsPerSample() {
+		return bitsPerSample;
 	}
 }
