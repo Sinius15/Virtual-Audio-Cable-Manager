@@ -109,14 +109,6 @@ public class VACMFrame extends JFrame {
 							ex.printStackTrace();
 						}
 					}
-					if (e.getNewState() == 7) {
-						try {
-							tray.add(trayIcon);
-							setVisible(false);
-						} catch (AWTException ex) {
-							ex.printStackTrace();
-						}
-					}
 					if (e.getNewState() == MAXIMIZED_BOTH) {
 						tray.remove(trayIcon);
 						setVisible(true);
