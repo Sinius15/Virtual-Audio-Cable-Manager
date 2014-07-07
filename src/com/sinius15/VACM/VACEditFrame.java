@@ -163,7 +163,7 @@ public class VACEditFrame extends JFrame {
 					newCab.setArgument(Argument.BufferMs, a);
 				
 				//Buffers
-				a = (String) buffers.getValue();
+				a = ((Integer) buffers.getValue()).toString();
 				if(checkInt(a)) return;
 				if(!a.equals("12"))
 					newCab.setArgument(Argument.Buffers, a);
