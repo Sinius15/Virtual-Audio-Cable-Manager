@@ -70,9 +70,6 @@ public class VACMFrame extends JFrame {
 			setIconImage(icon);
 		} catch (IOException e1) {}
 		
-		
-
-		
 		if (SystemTray.isSupported()) {
 			tray = SystemTray.getSystemTray();
 			
