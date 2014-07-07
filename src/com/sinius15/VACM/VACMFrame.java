@@ -66,16 +66,16 @@ public class VACMFrame extends JFrame {
 			tray = SystemTray.getSystemTray();
 			
 			Image image = Toolkit.getDefaultToolkit().getImage("/res/icon.png");
-			ActionListener exitListener = new ActionListener() {
+			PopupMenu popupMenu = new PopupMenu();
+			
+			MenuItem exit = new MenuItem("Exit");
+			exit.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					System.exit(0);
 				}
-			};
-			PopupMenu popup = new PopupMenu();
-			
-			MenuItem exit = new MenuItem("Exit");
-			exit.addActionListener(exitListener);
-			popup.add(exit);
+			});
+			popupMenu.add(exit);
 			
 			MenuItem open = new MenuItem("Restore");
 			open.addActionListener(new ActionListener() {
@@ -84,9 +84,9 @@ public class VACMFrame extends JFrame {
 					setExtendedState(JFrame.NORMAL);
 				}
 			});
-			popup.add(open);
+			popupMenu.add(open);
 			
-			trayIcon = new TrayIcon(image, "Virtual Audio Cable Manager", popup);
+			trayIcon = new TrayIcon(image, "Virtual Audio Cable Manager", popupMenu);
 			trayIcon.setImageAutoSize(true);
 			
 			trayIcon.addMouseListener(new MouseAdapter() {
