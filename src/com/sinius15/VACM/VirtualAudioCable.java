@@ -26,7 +26,9 @@ public class VirtualAudioCable {
 	}
 
 	public void startAudioCable(){
-		ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start", "/min", "audiorepeater.exe", "");
+		String[] args = new String[arguments.size()];
+		args[0] = "start /min audiorepeater.exe"
+		ProcessBuilder builder = new ProcessBuilder(args);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
 		builder.redirectErrorStream(true);
 		try {
