@@ -17,6 +17,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -41,7 +42,7 @@ public class VACMFrame extends JFrame {
 		JScrollPane center = new JScrollPane();
 		getContentPane().add(center, BorderLayout.CENTER);
 		
-		JList<VirtualAudioCable> cableList = new JList<VirtualAudioCable>();
+		cableList = new JList<VirtualAudioCable>();
 		center.setViewportView(cableList);
 		
 		JLabel lblAudioCables = new JLabel("Audio Cables: ");
@@ -176,13 +177,18 @@ public class VACMFrame extends JFrame {
 	}
 	
 	public void updateList(){
-		
+		cableList.removeAll();
+		cableList.set
 	}
 	
 	private static final long serialVersionUID = 2595653495897980319L;
 	private JTextField textField;
+	private JList<VirtualAudioCable> cableList;
 	
 	public JTextField getExField() {
 		return textField;
+	}
+	public JList getCableList() {
+		return cableList;
 	}
 }
