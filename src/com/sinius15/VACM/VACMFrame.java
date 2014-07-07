@@ -61,11 +61,12 @@ public class VACMFrame extends JFrame {
 							"The name must exist of only letters!", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				if(VirtualAudioCableManager.getManager().hasCableWithName(name)){
+				if(VirtualAudioCableManager.getManager().getCable(name) == null){
 					JOptionPane.showMessageDialog(VirtualAudioCableManager.getManager().frame, 
 							"The name must be uniqe.", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
+				
 			}
 		});
 		bottom.add(btnAdd);
