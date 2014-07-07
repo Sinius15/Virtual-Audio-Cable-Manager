@@ -80,7 +80,7 @@ public class VACMFrame extends JFrame {
 		BufferedImage icon = null;
 		
 		try {
-			icon = ImageIO.read(new File("res/icon.png"));
+			icon = ImageIO.read(VirtualAudioCableManager);
 			setIconImage(icon);
 		} catch (IOException e1) {}
 		
