@@ -134,21 +134,13 @@ public class VACEditFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				VirtualAudioCable newCab = new VirtualAudioCable(cable.getName());
 				
-				//input
-				String a = (String) waveIn.getSelectedItem();
-				if(!a.equals("Default"))
-					newCab.setArgument(Argument.Input, a);
 				
-				//output
-				a = (String) waveOut.getSelectedItem();
-				if(!a.equals("Default"))
-					newCab.setArgument(Argument.Output, a);
-				
-				//SampleRate
-				a = (String)sampleRate.getSelectedItem();
-				if(checkInt(a)) return;
-				if(!a.equals("48000"))
-					newCab.setArgument(Argument.SamplingRate, a);
+				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
+				doWhatYouGotTODO((String) waveOut.getSelectedItem(), Argument.Output, newCab, false);
+				doWhatYouGotTODO((String) sampleRate.getSelectedItem(), Argument.SamplingRate, newCab, true);
+				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
+				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
+				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
 				
 				//Bits Per Sample
 				a = (String)bitsPerSample.getSelectedItem();
