@@ -41,6 +41,7 @@ public class VACEditFrame extends JFrame {
 			public void windowClosing(WindowEvent e) {
 				VirtualAudioCableManager.getManager().frame.setEnabled(true);
 				VirtualAudioCableManager.getManager().frame.requestFocus();
+				VirtualAudioCableManager.getManager().frame.updateList();
 			}
 		});
 		this.cable = cab;
