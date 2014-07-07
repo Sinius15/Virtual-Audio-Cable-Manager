@@ -6,6 +6,10 @@ public class VirtualAudioCable {
 	
 	HashMap<String, String> arguments = new HashMap<String, String>();
 	
+	public VirtualAudioCable(){
+		
+	}
+	
 	
 	
 }
