@@ -50,6 +50,11 @@ public class VACMFrame extends JFrame {
 		getContentPane().add(bottom, BorderLayout.SOUTH);
 		
 		JButton btnAdd = new JButton("Add");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		bottom.add(btnAdd);
 		
 		JButton btnRemove = new JButton("Remove");
