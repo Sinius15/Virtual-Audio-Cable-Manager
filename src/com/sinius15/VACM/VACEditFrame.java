@@ -11,8 +11,11 @@ public class VACEditFrame extends JFrame {
 	private static final long serialVersionUID = -4698554134567470651L;
 	private JPanel contentPane;
 
+	private VirtualAudioCable cable;
+	
 	public VACEditFrame(VirtualAudioCable cable) {
-		setTitle("Virtual Audio Cable (" +cable.getName() + ")");
+		this.cable = cable;
+		setTitle("Virtual Audio Cable (" + cable.getName() + ")");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
