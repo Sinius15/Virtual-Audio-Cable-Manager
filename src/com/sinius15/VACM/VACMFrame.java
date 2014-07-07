@@ -56,18 +56,18 @@ public class VACMFrame extends JFrame {
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String name = JOptionPane.showInternalInputDialog(
-						VirtualAudioCableManager.getManager().frame,
+						thiss,
 						"What is the title of this new AudioRepeater? " + System.lineSeparator()
 								+ "The name must exist of only letters and must be uniqe", "name?",
 						JOptionPane.QUESTION_MESSAGE);
 				if (!name.matches("[a-zA-Z]+")) {
-					JOptionPane.showMessageDialog(VirtualAudioCableManager.getManager().frame,
+					JOptionPane.showMessageDialog(thiss,
 							"The name must exist of only letters!", "Fatal Error!",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				if (VirtualAudioCableManager.getManager().getCable(name) == null) {
-					JOptionPane.showMessageDialog(VirtualAudioCableManager.getManager().frame,
+					JOptionPane.showMessageDialog(thiss,
 							"The name must be uniqe.", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
