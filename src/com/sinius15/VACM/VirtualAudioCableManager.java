@@ -59,7 +59,10 @@ public class VirtualAudioCableManager {
 		javax.sound.sampled.Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
 		 
 		for(int i = 0; i < mixerInfo.length; i++){
-		     System.out.println(mixerInfo[i].getDescription());
+			if(mixerInfo[i].getDescription().equals("Direct Audio Device: DirectSound Capture"))
+				System.out.println("Input: " + mixerInfo[i].getName());
+			if(mixerInfo[i].getDescription().equals("Direct Audio Device: DirectSound Playback"))
+				System.out.println("Output: " + mixerInfo[i].getName());
 		}
 		
 		thiss = new VirtualAudioCableManager();
