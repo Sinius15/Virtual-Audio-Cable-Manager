@@ -86,6 +86,16 @@ public class VACMFrame extends JFrame {
 			trayIcon = new TrayIcon(image, "Virtual Audio Cable Manager", popup);
 			trayIcon.setImageAutoSize(true);
 			
+			trayIcon.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					tray.remove(trayIcon);
+					setVisible(true);
+					requestFocus();
+				}
+			});
+			
 			addWindowStateListener(new WindowStateListener() {
 				public void windowStateChanged(WindowEvent e) {
 					if (e.getNewState() == ICONIFIED) {
