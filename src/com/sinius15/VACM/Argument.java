@@ -30,5 +30,9 @@ public enum Argument {
 	public String getTitle() {
 		return title;
 	}
+
+	public String getDefaul() {
+		return defaul;
+	}
 	
 }
