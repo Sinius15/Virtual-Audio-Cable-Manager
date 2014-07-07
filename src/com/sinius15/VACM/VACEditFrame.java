@@ -121,6 +121,7 @@ public class VACEditFrame extends JFrame {
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VirtualAudioCable newCab = new VirtualAudioCable(cable.getName());
+				//waveIn.getSelectedItem();
 			}
 		});
 		btnSave.setBounds(278, 178, 89, 23);
