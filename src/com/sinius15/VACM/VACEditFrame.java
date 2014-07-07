@@ -178,6 +178,8 @@ public class VACEditFrame extends JFrame {
 				if(!a.equals("Normal"))
 					newCab.setArgument(Argument.Priority, a);
 				
+				VirtualAudioCableManager.getManager().cables.remove(cable);
+				VirtualAudioCableManager.getManager().cables.add(newCab);
 				
 			}
 		});
