@@ -66,7 +66,7 @@ public class VACMFrame extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				if (VirtualAudioCableManager.getManager().getCable(name) == null) {
+				if (VirtualAudioCableManager.getManager().getCable(name) != null) {
 					JOptionPane.showMessageDialog(thiss,
 							"The name must be uniqe.", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
 					return;
