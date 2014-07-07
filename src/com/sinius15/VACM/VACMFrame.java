@@ -61,7 +61,10 @@ public class VACMFrame extends JFrame {
 		JButton btnStopAll = new JButton("Stop All");
 		panel.add(btnStopAll);
 		
-		setIconImage(Toolkit.getDefaultToolkit().getImage("/res/icon.png"));
+		Image icon = Toolkit.getDefaultToolkit().getImage("/res/icon.png");
+		System.out.println(icon.getHeight(null));
+		
+
 		
 		if (SystemTray.isSupported()) {
 			tray = SystemTray.getSystemTray();
