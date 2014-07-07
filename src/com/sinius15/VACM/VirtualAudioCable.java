@@ -38,6 +38,7 @@ public class VirtualAudioCable {
 				else  //argument is a string and needs "
 					args[i] += ": " + "\"" + arguments.get(i) + "\"";
 			}
+			i++;
 		}
 		
 		ProcessBuilder builder = new ProcessBuilder(args);
