@@ -55,7 +55,7 @@ public class VACMFrame extends JFrame {
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String name = JOptionPane.showInternalInputDialog(
+				String name = JOptionPane.showInputDialog(
 						thiss,
 						"What is the title of this new AudioRepeater? " + System.lineSeparator()
 								+ "The name must exist of only letters and must be uniqe", "name?",
