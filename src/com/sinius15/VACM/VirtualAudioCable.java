@@ -36,13 +36,11 @@ public class VirtualAudioCable {
 					args[i] += ": " + arguments.get(i);
 				else  //argument is a string and needs "
 					args[i] += ": " + "\"" + arguments.get(i) + "\"";
-				
 			}
 		}
 		
 		ProcessBuilder builder = new ProcessBuilder(args);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
-		builder.redirectErrorStream(true);
 		
 		try {
 			builder.start();
@@ -52,9 +50,8 @@ public class VirtualAudioCable {
 	}
 	
 	public void stopAudioCable(){
-		ProcessBuilder builder = new ProcessBuilder("start audiorepeater.exe /CloseInstance");
+		ProcessBuilder builder = new ProcessBuilder("start audiorepeater.exe /CloseInstance: " + name);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
-		builder.redirectErrorStream(true);
 		
 		try {
 			builder.start();
