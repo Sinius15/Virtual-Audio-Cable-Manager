@@ -16,15 +16,9 @@ public enum Argument {
 	Autostart("Autostart");
 	
 	private String title;
-	private String value;
 	
 	Argument(String title){
 		this.title = title;
-	}
-	
-	Argument(String title, String value) {
-		this.title = title;
-		this.setValue(value);
 	}
 	
 	@Override
@@ -34,14 +28,6 @@ public enum Argument {
 
 	public String getTitle() {
 		return title;
-	}
-	
-	public String getValue() {
-		return value;
-	}
-	
-	public void setValue(String value) {
-		this.value = value;
 	}
 	
 }
