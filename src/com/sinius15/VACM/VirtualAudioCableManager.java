@@ -2,6 +2,7 @@ package com.sinius15.VACM;
 
 import java.util.ArrayList;
 
+import javax.sound.sampled.AudioSystem;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -54,6 +55,13 @@ public class VirtualAudioCableManager {
         }catch(Exception e){
             e.printStackTrace();
         }
+		
+		javax.sound.sampled.Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
+		 
+		for(int i = 0; i < mixerInfo.length; i++)
+		{
+		     System.out.println(mixerInfo[i].getName());
+		}
 		
 		thiss = new VirtualAudioCableManager();
 	}
