@@ -5,15 +5,14 @@ public enum Argument {
 	
 	Input("Input", "Default"), 
 	Output("Output", "Default"), 
-	SamplingRate("SamplingRate", ""), 
-	BitsPerSample("BitsPerSample", ""), 
-	Channels("Channels", ""), 
-	ChanCfg("ChanCfg", ""), 
-	BufferMs("BufferMs", ""), 
-	Buffers("Buffers", ""), 
-	Priority("Priority", ""),
-	WindowName("WindowName", ""),
-	Autostart("Autostart", "");
+	SamplingRate("SamplingRate", "48000"), 
+	BitsPerSample("BitsPerSample", "16"), 
+	ChanCfg("ChanCfg", "Stereo"), 
+	BufferMs("BufferMs", "500"), 
+	Buffers("Buffers", "12"), 
+	Priority("Priority", "Normal"),
+	WindowName("WindowName", null),
+	Autostart("Autostart", null);
 	
 	private String title, defaul;
 	
