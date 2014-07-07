@@ -32,6 +32,8 @@ public class VACEditFrame extends JFrame {
 	private JComboBox<String> waveOut;
 	private JComboBox<String> bitsPerSample;
 	
+	private VACEditFrame thiss = this;
+	
 	public VACEditFrame(VirtualAudioCable cab) {
 		setResizable(false);
 		addWindowListener(new WindowAdapter() {
@@ -180,6 +182,8 @@ public class VACEditFrame extends JFrame {
 				
 				VirtualAudioCableManager.getManager().cables.remove(cable);
 				VirtualAudioCableManager.getManager().cables.add(newCab);
+				
+				thiss.dispose();
 				
 			}
 		});
