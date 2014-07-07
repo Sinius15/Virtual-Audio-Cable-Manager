@@ -13,7 +13,12 @@ public class VirtualAudioCableManager {
 		this.frame.setVisible(true);
 	}
 	
+	private static VirtualAudioCableManager thiss;
+	public static VirtualAudioCableManager getManager(){
+		return thiss;
+	}
+	
 	public static void main(String[] args) {
-		new VirtualAudioCableManager();
+		thiss = new VirtualAudioCableManager();
 	}
 }
