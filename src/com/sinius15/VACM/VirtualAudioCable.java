@@ -7,15 +7,12 @@ public class VirtualAudioCable {
 	HashMap<String, String> arguments = new HashMap<String, String>();
 	
 	/**
-	 * 
+	 * Creates a new {@link VirtualAudioCable}
 	 * @param windowName must exist of letters.
 	 */
 	public VirtualAudioCable(String windowName){
-		if(!windowName.matches("[a-zA-Z]+")){
+		if(!windowName.matches("[a-zA-Z]+"))
 			throw new IllegalArgumentException("windowName must exist of letters.");
-			
-		}
-			
 		arguments.put("WindowName:", "\""+windowName+"\"");
 	}
 	
