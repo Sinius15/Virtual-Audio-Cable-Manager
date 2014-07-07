@@ -27,9 +27,9 @@ public class VirtualAudioCable {
 	}
 
 	public void startAudioCable(){
-		String[] args = new String[arguments.size()];
+		String[] args = new String[arguments.size()+1];
 		args[0] = "start /min audiorepeater.exe";
-		int i = 0;
+		int i = 1;
 		for(Argument key : arguments.keySet()){
 			args[i] = "/" + key;
 			if(arguments.get(i) != null){ //argument has a second parameter
