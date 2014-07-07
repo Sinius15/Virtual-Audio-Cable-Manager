@@ -75,7 +75,6 @@ public class VACMFrame extends JFrame {
 					System.exit(0);
 				}
 			});
-			popupMenu.add(exit);
 			
 			MenuItem open = new MenuItem("Restore");
 			open.addActionListener(new ActionListener() {
@@ -84,7 +83,18 @@ public class VACMFrame extends JFrame {
 					setExtendedState(JFrame.NORMAL);
 				}
 			});
+			
+			MenuItem restart = new MenuItem("Restart/start all cables");
+			restart.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					VirtualAudioCableManager.getManager().restartAllCables();
+				}
+			});
+			
 			popupMenu.add(open);
+			popupMenu.add(restart);
+			popupMenu.add(exit);
 			
 			trayIcon = new TrayIcon(image, "Virtual Audio Cable Manager", popupMenu);
 			trayIcon.setImageAutoSize(true);
