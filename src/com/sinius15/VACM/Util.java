@@ -22,7 +22,7 @@ public class Util {
 			}
 		}
 		
-		return out;
+		return cutLength(out, 31);
 	}
 	
 	public static String[] getOutputDeviceNames(){
@@ -42,7 +42,14 @@ public class Util {
 			}
 		}
 		
-		return out;
+		return cutLength(out, 31);
+	}
+	
+	private static String[] cutLength(String[] in, int length){
+		for(int i = 0; i < in.length; i++){
+			
+		}
+		return in;
 	}
 	
 }
