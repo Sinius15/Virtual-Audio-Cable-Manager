@@ -35,12 +35,12 @@ public class VirtualAudioCableManager {
 		stopAllCables();
 		startAllCables();
 	}
-	public boolean hasCableWithName(String name) {
+	public VirtualAudioCable getCable(String name) {
 		for(VirtualAudioCable cable: cables){
 			if(cable.getName().equals(name))
-				return true;
+				return cable;
 		}
-		return false;
+		return null;
 	}
 	
 	private static VirtualAudioCableManager thiss;
