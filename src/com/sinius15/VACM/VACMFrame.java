@@ -74,7 +74,7 @@ public class VACMFrame extends JFrame {
 			exit.addActionListener(exitListener);
 			popup.add(exit);
 			
-			MenuItem open = new MenuItem("Open");
+			MenuItem open = new MenuItem("Restore");
 			open.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(true);
@@ -82,29 +82,32 @@ public class VACMFrame extends JFrame {
 				}
 			});
 			popup.add(open);
-			trayIcon = new TrayIcon(image, "SystemTray Demo", popup);
+			
+			trayIcon = new TrayIcon(image, "Virtual Audio Cable Manager", popup);
 			trayIcon.setImageAutoSize(true);
-		}
-		addWindowStateListener(new WindowStateListener() {
-			public void windowStateChanged(WindowEvent e) {
-				if (e.getNewState() == ICONIFIED) {
-					try {
-						tray.add(trayIcon);
-						setVisible(false);
-					} catch (AWTException ex) {
-						ex.printStackTrace();
+			
+			addWindowStateListener(new WindowStateListener() {
+				public void windowStateChanged(WindowEvent e) {
+					if (e.getNewState() == ICONIFIED) {
+						try {
+							tray.add(trayIcon);
+							setVisible(false);
+						} catch (AWTException ex) {
+							ex.printStackTrace();
+						}
+					}
+					if (e.getNewState() == MAXIMIZED_BOTH) {
+						tray.remove(trayIcon);
+						setVisible(true);
+					}
+					if (e.getNewState() == NORMAL) {
+						tray.remove(trayIcon);
+						setVisible(true);
 					}
 				}
-				if (e.getNewState() == MAXIMIZED_BOTH) {
-					tray.remove(trayIcon);
-					setVisible(true);
-				}
-				if (e.getNewState() == NORMAL) {
-					tray.remove(trayIcon);
-					setVisible(true);
-				}
-			}
-		});
+			});	
+		}
+		
 		
 	}
 	
