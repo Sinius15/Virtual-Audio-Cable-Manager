@@ -22,10 +22,14 @@ public class VirtualAudioCableManager {
 	}
 	
 	public void startAllCables(){
-		
+		for(VirtualAudioCable cable: cables){
+			cable.startAudioCable();
+		}
 	}
 	public void stopAllCables(){
-		
+		for(VirtualAudioCable cable: cables){
+			cable.stopAudioCable();
+		}
 	}
 	public void restartAllCables(){
 		stopAllCables();
