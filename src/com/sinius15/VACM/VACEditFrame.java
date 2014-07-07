@@ -32,7 +32,7 @@ public class VACEditFrame extends JFrame {
 		this.cable = cable;
 		setTitle("Virtual Audio Cable (" + cable.getName() + ")");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 416, 229);
+		setBounds(100, 100, 416, 240);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -112,7 +112,11 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(comboBox_6);
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setBounds(278, 171, 89, 23);
+		btnSave.setBounds(278, 178, 89, 23);
 		contentPane.add(btnSave);
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setBounds(179, 178, 89, 23);
+		contentPane.add(btnCancel);
 	}
 }
