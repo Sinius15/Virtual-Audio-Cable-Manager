@@ -69,17 +69,19 @@ public class VACMFrame extends JFrame {
 				}
 			};
 			PopupMenu popup = new PopupMenu();
-			MenuItem defaultItem = new MenuItem("Exit");
-			defaultItem.addActionListener(exitListener);
-			popup.add(defaultItem);
-			defaultItem = new MenuItem("Open");
-			defaultItem.addActionListener(new ActionListener() {
+			
+			MenuItem exit = new MenuItem("Exit");
+			exit.addActionListener(exitListener);
+			popup.add(exit);
+			
+			MenuItem open = new MenuItem("Open");
+			open.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(true);
 					setExtendedState(JFrame.NORMAL);
 				}
 			});
-			popup.add(defaultItem);
+			popup.add(open);
 			trayIcon = new TrayIcon(image, "SystemTray Demo", popup);
 			trayIcon.setImageAutoSize(true);
 		}
