@@ -175,6 +175,10 @@ public class VACMFrame extends JFrame {
 		
 	}
 	
+	public void updateList(){
+		
+	}
+	
 	private static final long serialVersionUID = 2595653495897980319L;
 	private JTextField textField;
 	
