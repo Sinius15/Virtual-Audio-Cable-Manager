@@ -47,7 +47,10 @@ public class Util {
 	
 	private static String[] cutLength(String[] in, int length){
 		for(int i = 0; i < in.length; i++){
-			
+			if(in[i].length() > length){
+				in[i] = in[i].substring(0, 31);
+				
+			}
 		}
 		return in;
 	}
