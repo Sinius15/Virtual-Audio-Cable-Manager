@@ -62,7 +62,7 @@ public class VACMFrame extends JFrame {
 		if (SystemTray.isSupported()) {
 			tray = SystemTray.getSystemTray();
 			
-			Image image = Toolkit.getDefaultToolkit().getImage("/media/faisal/DukeImg/Duke256.png");
+			Image image = Toolkit.getDefaultToolkit().getImage("/res/icon.png");
 			ActionListener exitListener = new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					System.exit(0);
