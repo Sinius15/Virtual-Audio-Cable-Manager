@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 
 public class VACMFrame extends JFrame {
 	
@@ -44,6 +45,7 @@ public class VACMFrame extends JFrame {
 		getContentPane().add(center, BorderLayout.CENTER);
 		
 		cableList = new JList<VirtualAudioCable>();
+		cableList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		center.setViewportView(cableList);
 		
 		JLabel lblAudioCables = new JLabel("Audio Cables: ");
