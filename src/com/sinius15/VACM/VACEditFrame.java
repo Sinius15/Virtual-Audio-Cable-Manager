@@ -199,6 +199,14 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(btnCancel);
 	}
 	
+	private void doWhatYouGotTODO(String str, Argument arg, VirtualAudioCable cable, boolean isInt){
+		if(isInt)
+			if(checkInt(str)) return;
+		if(str.equals(arg))
+			return;
+		cable.setArgument(arg, str);
+	}
+	
 	private boolean checkInt(String input){
 		if(!input.matches("[0-9]+")){
 			JOptionPane.showMessageDialog(this, "Some of the feelds may only contain numbers. Please change your input.", "Fatal Error", JOptionPane.ERROR_MESSAGE);
