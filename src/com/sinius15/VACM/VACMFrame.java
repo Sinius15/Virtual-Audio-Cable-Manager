@@ -22,6 +22,7 @@ import javax.swing.JScrollPane;
 
 public class VACMFrame extends JFrame {
 	
+	TrayIcon trayIcon;
 	SystemTray tray;
 	
 	public VACMFrame() {
@@ -61,6 +62,7 @@ public class VACMFrame extends JFrame {
 		if (SystemTray.isSupported()) {
 			tray = SystemTray.getSystemTray();
 			
+			Image image = Toolkit.getDefaultToolkit().getImage("/media/faisal/DukeImg/Duke256.png");
 			ActionListener exitListener = new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					System.exit(0);
