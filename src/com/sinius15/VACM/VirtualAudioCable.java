@@ -31,12 +31,12 @@ public class VirtualAudioCable {
 		int i = 0;
 		for(String key : arguments.keySet()){
 			args[i] = "/" + key;
-			if(arguments.get(i) != null){
-				if(arguments.get(i).matches("[0-9]+")){
+			if(arguments.get(i) != null){ //argument has a second parameter
+				if(arguments.get(i).matches("[0-9]+"))  //argument is a number
 					args[i] += ": " + arguments.get(i);
-				}else{
+				else  //argument is a string and needs "
 					args[i] += ": " + "\"" + arguments.get(i) + "\"";
-				}
+				
 			}
 		}
 		
