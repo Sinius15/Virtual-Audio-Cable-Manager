@@ -2,12 +2,18 @@ package com.sinius15.VACM;
 
 public enum Argument {
 	
-	input, 
-	output, 
-	samplerate, 
-	bitspersample, channels, chancfg, bufferms, buffers, priority, autostart;
+	Input, 
+	Output, 
+	SamplingRate, 
+	BitsPerSample, 
+	Channels, 
+	ChanCfg, 
+	BufferMs, 
+	Buffers, 
+	Priority, 
+	AutoStart;
 	
-	Argument(String title){
+	Argument(String title, Class<?> type){
 		
 	}
 	
