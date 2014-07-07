@@ -17,7 +17,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -54,16 +53,19 @@ public class VACMFrame extends JFrame {
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String name = JOptionPane.showInternalInputDialog(VirtualAudioCableManager.getManager().frame, 
-						"What is the title of this new AudioRepeater? " + System.lineSeparator() + 
-						"The name must exist of only letters and must be uniqe", "name?", JOptionPane.QUESTION_MESSAGE);
-				if(!name.matches("[a-zA-Z]+")){
-					JOptionPane.showMessageDialog(VirtualAudioCableManager.getManager().frame, 
-							"The name must exist of only letters!", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
+				String name = JOptionPane.showInternalInputDialog(
+						VirtualAudioCableManager.getManager().frame,
+						"What is the title of this new AudioRepeater? " + System.lineSeparator()
+								+ "The name must exist of only letters and must be uniqe", "name?",
+						JOptionPane.QUESTION_MESSAGE);
+				if (!name.matches("[a-zA-Z]+")) {
+					JOptionPane.showMessageDialog(VirtualAudioCableManager.getManager().frame,
+							"The name must exist of only letters!", "Fatal Error!",
+							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				if(VirtualAudioCableManager.getManager().getCable(name) == null){
-					JOptionPane.showMessageDialog(VirtualAudioCableManager.getManager().frame, 
+				if (VirtualAudioCableManager.getManager().getCable(name) == null) {
+					JOptionPane.showMessageDialog(VirtualAudioCableManager.getManager().frame,
 							"The name must be uniqe.", "Fatal Error!", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
@@ -144,7 +146,7 @@ public class VACMFrame extends JFrame {
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					super.mouseClicked(e);
-					if(e.getButton() == MouseEvent.BUTTON1){
+					if (e.getButton() == MouseEvent.BUTTON1) {
 						setVisible(true);
 						setExtendedState(JFrame.NORMAL);
 					}
@@ -170,15 +172,17 @@ public class VACMFrame extends JFrame {
 						setVisible(true);
 					}
 				}
-			});	
+			});
 		}
-		
 		
 	}
 	
-	public void updateList(){
+	public void updateList() {
 		cableList.removeAll();
-		cableList.set
+		cableList
+				.setListData(VirtualAudioCableManager.getManager().cables
+						.toArray(new VirtualAudioCable[VirtualAudioCableManager.getManager().cables
+								.size()]));
 	}
 	
 	private static final long serialVersionUID = 2595653495897980319L;
@@ -188,6 +192,7 @@ public class VACMFrame extends JFrame {
 	public JTextField getExField() {
 		return textField;
 	}
+	
 	public JList getCableList() {
 		return cableList;
 	}
