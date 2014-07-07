@@ -14,7 +14,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowStateListener;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -61,8 +64,14 @@ public class VACMFrame extends JFrame {
 		JButton btnStopAll = new JButton("Stop All");
 		panel.add(btnStopAll);
 		
-		Image icon = Toolkit.getDefaultToolkit().getImage("/res/icon.png");
-		System.out.println(icon.getHeight(null));
+		Image icon;
+		try {
+			icon = ImageIO.read(new File("/res/icon.png"));
+			System.out.println(icon.getHeight(null));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
 		
 
 		
