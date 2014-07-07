@@ -141,22 +141,8 @@ public class VACEditFrame extends JFrame {
 				doWhatYouGotTODO((String) bitsPerSample.getSelectedItem(), Argument.BitsPerSample, newCab, true);
 				doWhatYouGotTODO((String) bufferMs.getSelectedItem(), Argument.BufferMs, newCab, true);
 				doWhatYouGotTODO(((Integer) buffers.getValue()).toString(), Argument.Buffers, newCab, false);
-				
-				//Buffers
-				a = ((Integer) buffers.getValue()).toString();
-				if(checkInt(a)) return;
-				if(!a.equals("12"))
-					newCab.setArgument(Argument.Buffers, a);
-				
-				//Channel Config
-				a = (String) channelConfig.getSelectedItem();
-				if(!a.equals("Stereo"))
-					newCab.setArgument(Argument.ChanCfg, a);
-				
-				//Priority
-				a = (String) priority.getSelectedItem();
-				if(!a.equals("Normal"))
-					newCab.setArgument(Argument.Priority, a);
+				doWhatYouGotTODO((String) channelConfig.getSelectedItem(), Argument.ChanCfg, newCab, false);
+				doWhatYouGotTODO((String) priority.getSelectedItem(), Argument.Priority, newCab, false);
 				
 				VirtualAudioCableManager.getManager().cables.remove(cable);
 				VirtualAudioCableManager.getManager().cables.add(newCab);
