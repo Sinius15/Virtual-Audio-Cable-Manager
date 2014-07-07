@@ -31,4 +31,9 @@ public class VirtualAudioCable {
 		return name;
 	}
 	
+	@Override
+	public String toString() {
+		return getName();
+	}
+	
 }
