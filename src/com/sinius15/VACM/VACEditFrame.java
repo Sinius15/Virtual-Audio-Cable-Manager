@@ -98,13 +98,13 @@ public class VACEditFrame extends JFrame {
 		
 		channelConfig = new JComboBox<String>();
 		channelConfig.setModel(new DefaultComboBoxModel<String>(new String[] {"Mono", "Stereo", "Quadraphonic", "Surround", "5.1 back", "5.1 surround", "7.1 wide", "7.1 surround"}));
-		channelConfig.setSelectedIndex(1);
+		channelConfig.setSelectedItem(cable.getArgument(Argument.ChanCfg));
 		channelConfig.setBounds(90, 130, 96, 20);
 		contentPane.add(channelConfig);
 		
 		bufferMs = new JComboBox<String>();
 		bufferMs.setModel(new DefaultComboBoxModel<String>(new String[] {"50", "100", "200", "400", "500", "800", "1000", "2000", "4000", "8000"}));
-		bufferMs.setSelectedIndex(4);
+		bufferMs.setSelectedItem(cable.getArgument(Argument.BufferMs));
 		bufferMs.setEditable(true);
 		bufferMs.setBounds(292, 70, 75, 20);
 		contentPane.add(bufferMs);
@@ -114,7 +114,7 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(lblTotalBufferms);
 		
 		buffers = new JSpinner();
-		buffers.setModel(new SpinnerNumberModel(new Integer(12), new Integer(1), null, new Integer(1)));
+		buffers.setModel(new SpinnerNumberModel(Integer.parseInt(cable.getArgument(Argument.Buffers)), new Integer(1), null, new Integer(1)));
 		buffers.setBounds(321, 101, 46, 20);
 		contentPane.add(buffers);
 		
