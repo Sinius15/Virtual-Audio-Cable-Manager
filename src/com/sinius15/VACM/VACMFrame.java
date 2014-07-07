@@ -65,8 +65,10 @@ public class VACMFrame extends JFrame {
 		JButton btnStopAll = new JButton("Stop All");
 		panel.add(btnStopAll);
 		
+		BufferedImage icon = null;
+		
 		try {
-			BufferedImage icon = ImageIO.read(new File("res/icon.png"));
+			icon = ImageIO.read(new File("res/icon.png"));
 			setIconImage(icon);
 		} catch (IOException e1) {}
 		
@@ -75,8 +77,6 @@ public class VACMFrame extends JFrame {
 		
 		if (SystemTray.isSupported()) {
 			tray = SystemTray.getSystemTray();
-			
-			Image image = Toolkit.getDefaultToolkit().getImage("/res/icon.png");
 			
 			PopupMenu popupMenu = new PopupMenu();
 			
@@ -108,7 +108,7 @@ public class VACMFrame extends JFrame {
 			popupMenu.add(restore);
 			popupMenu.add(exit);
 			
-			trayIcon = new TrayIcon(image, "Virtual Audio Cable Manager", popupMenu);
+			trayIcon = new TrayIcon(icon, "Virtual Audio Cable Manager", popupMenu);
 			trayIcon.setImageAutoSize(true);
 			
 			trayIcon.addMouseListener(new MouseAdapter() {
