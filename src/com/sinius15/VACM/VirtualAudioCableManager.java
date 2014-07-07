@@ -2,6 +2,8 @@ package com.sinius15.VACM;
 
 import java.util.ArrayList;
 
+import javax.swing.SwingUtilities;
+
 public class VirtualAudioCableManager {
 	
 	ArrayList<VirtualAudioCable> cables = new ArrayList<>();
@@ -9,8 +11,13 @@ public class VirtualAudioCableManager {
 	public VACMFrame frame;
 	
 	public VirtualAudioCableManager(){
-		this.frame = new VACMFrame();
-		this.frame.setVisible(true);
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				frame = new VACMFrame();
+				frame.setVisible(true);
+			}
+		});
 	}
 	
 	public void startAllCables(){
@@ -30,6 +37,8 @@ public class VirtualAudioCableManager {
 	}
 	
 	public static void main(String[] args) {
+		
+		
 		thiss = new VirtualAudioCableManager();
 	}
 }
