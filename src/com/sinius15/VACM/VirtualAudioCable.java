@@ -31,8 +31,13 @@ public class VirtualAudioCable {
 		int i = 0;
 		for(String key : arguments.keySet()){
 			args[i] = "/" + key;
-			if(arguments.get(i) != null)
-				args[i] += ": " + arguments.get(i);
+			if(arguments.get(i) != null){
+				if(arguments.get(i).matches("[0-9]+")){
+					args[i] += ": " + arguments.get(i);
+				}else{
+					args[i] += ": " + "\"" + arguments.get(i) + "\"";
+				}
+			}
 		}
 		
 		ProcessBuilder builder = new ProcessBuilder(args);
