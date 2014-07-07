@@ -67,7 +67,7 @@ public class VACMFrame extends JFrame {
 		
 		BufferedImage icon;
 		try {
-			icon = ImageIO.read(new File("/res/icon.png"));
+			icon = ImageIO.read(getClass().getResourceAsStream("/res/icon.png"));
 			System.out.println(icon.getWidth());
 		} catch (IOException e1) {
 			e1.printStackTrace();
