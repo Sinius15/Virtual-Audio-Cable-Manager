@@ -11,7 +11,9 @@ public enum Argument {
 	ChanCfg("ChanCfg"), 
 	BufferMs("BufferMs"), 
 	Buffers("Buffers"), 
-	Priority("Priority");
+	Priority("Priority"),
+	WindowName("WindowName"),
+	Autostart("Autostart");
 	
 	private String title;
 	private String value;
