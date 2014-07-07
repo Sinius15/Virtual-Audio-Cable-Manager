@@ -30,7 +30,7 @@ public class VirtualAudioCable {
 		builder.directory(new File(System.getProperty("user.dir")));
 		builder.redirectErrorStream(true);
 		try {
-			Process p = builder.start();
+			builder.start();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

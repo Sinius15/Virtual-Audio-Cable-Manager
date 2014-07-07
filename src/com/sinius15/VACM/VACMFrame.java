@@ -14,7 +14,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowStateListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -80,7 +79,7 @@ public class VACMFrame extends JFrame {
 		BufferedImage icon = null;
 		
 		try {
-			icon = ImageIO.read(VirtualAudioCableManager);
+			icon = ImageIO.read(VirtualAudioCableManager.class.getResourceAsStream("icon.png"));
 			setIconImage(icon);
 		} catch (IOException e1) {}
 		
