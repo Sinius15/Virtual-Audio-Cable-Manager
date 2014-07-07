@@ -3,21 +3,22 @@ package com.sinius15.VACM;
 
 public enum Argument {
 	
-	Input("Input"), 
-	Output("Output"), 
-	SamplingRate("SamplingRate"), 
-	BitsPerSample("BitsPerSample"), 
-	Channels("Channels"), 
-	ChanCfg("ChanCfg"), 
-	BufferMs("BufferMs"), 
-	Buffers("Buffers"), 
-	Priority("Priority"),
-	WindowName("WindowName"),
-	Autostart("Autostart");
+	Input("Input", "Default"), 
+	Output("Output", "Default"), 
+	SamplingRate("SamplingRate", ""), 
+	BitsPerSample("BitsPerSample", ""), 
+	Channels("Channels", ""), 
+	ChanCfg("ChanCfg", ""), 
+	BufferMs("BufferMs", ""), 
+	Buffers("Buffers", ""), 
+	Priority("Priority", ""),
+	WindowName("WindowName", ""),
+	Autostart("Autostart", "");
 	
 	private String title, defaul;
 	
 	Argument(String title, String defaul){
+		this.defaul = defaul;
 		this.title = title;
 	}
 	
