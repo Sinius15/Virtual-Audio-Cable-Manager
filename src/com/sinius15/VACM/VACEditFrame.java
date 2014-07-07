@@ -160,6 +160,13 @@ public class VACEditFrame extends JFrame {
 				if(!a.equals("500"))
 					newCab.setArgument(Argument.BufferMs, a);
 				
+				//Buffers
+				a = (String) buffers.getValue();
+				if(checkInt(a)) return;
+				if(!a.equals("12"))
+					newCab.setArgument(Argument.Buffers, a);
+				
+				
 			}
 		});
 		btnSave.setBounds(278, 178, 89, 23);
