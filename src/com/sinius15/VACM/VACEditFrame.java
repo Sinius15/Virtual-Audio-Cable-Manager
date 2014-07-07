@@ -129,6 +129,7 @@ public class VACEditFrame extends JFrame {
 		priority = new JComboBox<String>();
 		priority.setModel(new DefaultComboBoxModel<String>(new String[] {"Normal", "High", "Realtime"}));
 		priority.setBounds(292, 131, 75, 20);
+		priority.setSelectedItem(cable.getArgument(Argument.Priority));
 		contentPane.add(priority);
 		
 		JButton btnSave = new JButton("Save");
