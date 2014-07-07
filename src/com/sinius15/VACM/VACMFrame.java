@@ -94,9 +94,8 @@ public class VACMFrame extends JFrame {
 				public void mouseClicked(MouseEvent e) {
 					super.mouseClicked(e);
 					if(e.getButton() == MouseEvent.BUTTON1){
-						tray.remove(trayIcon);
 						setVisible(true);
-						requestFocus();	
+						setExtendedState(JFrame.NORMAL);
 					}
 					
 				}
