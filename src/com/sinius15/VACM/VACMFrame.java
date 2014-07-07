@@ -31,6 +31,8 @@ public class VACMFrame extends JFrame {
 	TrayIcon trayIcon;
 	SystemTray tray;
 	
+	private VACMFrame thiss = this;
+	
 	public VACMFrame() {
 		BorderLayout borderLayout = (BorderLayout) getContentPane().getLayout();
 		borderLayout.setVgap(5);
