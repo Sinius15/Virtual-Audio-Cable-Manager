@@ -1,14 +1,14 @@
 package com.sinius15.VACM;
 
-import javax.swing.JFrame;
-import java.awt.Rectangle;
-import javax.swing.JLabel;
 import java.awt.BorderLayout;
-import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
+import java.awt.Rectangle;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JButton;
+import javax.swing.JScrollPane;
 
 public class VACMFrame extends JFrame{
 	public VACMFrame() {
@@ -18,15 +18,14 @@ public class VACMFrame extends JFrame{
 		setTitle("Virtual Audio Cable Manager");
 		setBounds(new Rectangle(0, 0, 100, 100));
 		
-		JLabel lblCable = new JLabel("     Cables: ");
-		lblCable.setVerticalAlignment(SwingConstants.BOTTOM);
-		getContentPane().add(lblCable, BorderLayout.NORTH);
-		
 		JScrollPane scrollPane = new JScrollPane();
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
 		JList cableList = new JList();
 		scrollPane.setViewportView(cableList);
+		
+		JLabel lblAudioCables = new JLabel("Audio Cables: ");
+		scrollPane.setColumnHeaderView(lblAudioCables);
 		
 		JPanel panel = new JPanel();
 		getContentPane().add(panel, BorderLayout.SOUTH);
