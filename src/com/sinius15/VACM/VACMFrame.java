@@ -97,7 +97,6 @@ public class VACMFrame extends JFrame {
 						setVisible(true);
 						setExtendedState(JFrame.NORMAL);
 					}
-					
 				}
 			});
 			
