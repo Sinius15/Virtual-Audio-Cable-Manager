@@ -88,6 +88,7 @@ public class VACMFrame extends JFrame {
 				if(cable == null)
 					return;
 				VirtualAudioCableManager.getManager().cables.remove(cable);
+				updateList();
 			}
 		});
 		bottom.add(btnRemove);
