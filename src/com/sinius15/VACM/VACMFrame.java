@@ -82,6 +82,11 @@ public class VACMFrame extends JFrame {
 		bottom.add(btnAdd);
 		
 		JButton btnRemove = new JButton("Remove");
+		btnRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		bottom.add(btnRemove);
 		
 		JButton btnEdit = new JButton("Edit");
