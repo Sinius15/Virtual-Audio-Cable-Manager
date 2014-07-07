@@ -8,7 +8,7 @@ public class VirtualAudioCable {
 	
 	private String name;
 	
-	private HashMap<Argument, String> arguments = new HashMap<String, String>();
+	private HashMap<Argument, String> arguments = new HashMap<Argument, String>();
 	
 	/**
 	 * Creates a new {@link VirtualAudioCable}
@@ -61,8 +61,8 @@ public class VirtualAudioCable {
 		}
 	}
 	
-	public void setArgument(Argument a){
-		arguments.put(a.getTitle(), a.getValue());
+	public void setArgument(Argument a, String value){
+		arguments.put(a, value);
 	}
 	
 	public String getName() {
