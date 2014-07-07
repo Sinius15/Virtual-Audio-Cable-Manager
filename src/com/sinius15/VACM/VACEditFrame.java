@@ -81,7 +81,7 @@ public class VACEditFrame extends JFrame {
 		contentPane.add(lblChannelConfig);
 		
 		JComboBox<String> channelConfig = new JComboBox<String>();
-		channelConfig.setModel(new DefaultComboBoxModel<String>(new String[] {"Mono", "Stereo", "Quadraphonic", "Surround", "5. 1 back", "5. 1 surround", "7. 1 wide", "7. 1 surround"}));
+		channelConfig.setModel(new DefaultComboBoxModel<String>(new String[] {"Mono", "Stereo", "Quadraphonic", "Surround", "5.1 back", "5.1 surround", "7.1 wide", "7.1 surround"}));
 		channelConfig.setSelectedIndex(1);
 		channelConfig.setBounds(90, 130, 96, 20);
 		contentPane.add(channelConfig);
