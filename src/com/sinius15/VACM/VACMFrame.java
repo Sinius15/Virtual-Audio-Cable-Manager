@@ -21,7 +21,7 @@ public class VACMFrame extends JFrame{
 		JScrollPane scrollPane = new JScrollPane();
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
-		JList cableList = new JList();
+		JList<VirtualAudioCable> cableList = new JList<VirtualAudioCable>();
 		scrollPane.setViewportView(cableList);
 		
 		JLabel lblAudioCables = new JLabel("Audio Cables: ");
