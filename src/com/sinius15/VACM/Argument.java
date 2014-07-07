@@ -12,6 +12,8 @@ public enum Argument {
 	Buffers("Buffers", Integer.class), 
 	Priority("Priority", String.class);
 	
+	
+	
 	Argument(String title, Class<?> type){
 		
 	}
