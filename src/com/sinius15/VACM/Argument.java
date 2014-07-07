@@ -1,14 +1,15 @@
 package com.sinius15.VACM;
 
+
 public enum Argument {
 	
 	Input("Input"), 
 	Output("Output"), 
-	SamplingRate("Sampling Rate"), 
-	BitsPerSample("Bits per Sample"), 
+	SamplingRate("SamplingRate"), 
+	BitsPerSample("BitsPerSample"), 
 	Channels("Channels"), 
-	ChanCfg("Channel Config"), 
-	BufferMs("Total Buffer (ms)"), 
+	ChanCfg("ChanCfg"), 
+	BufferMs("BufferMs"), 
 	Buffers("Buffers"), 
 	Priority("Priority");
 	
@@ -22,6 +23,11 @@ public enum Argument {
 	Argument(String title, String value) {
 		this.title = title;
 		this.setValue(value);
+	}
+	
+	@Override
+	public String toString() {
+		return getTitle();
 	}
 
 	public String getTitle() {
