@@ -148,6 +148,12 @@ public class VACEditFrame extends JFrame {
 				if(!a.equals("48000"))
 					newCab.setArgument(Argument.SamplingRate, a);
 				
+				//Bits Per Sample
+				a = (String)sampleRate.getSelectedItem();
+				if(checkInt(a)) return;
+				if(!a.equals("48000"))
+					newCab.setArgument(Argument.SamplingRate, a);
+				
 			}
 		});
 		btnSave.setBounds(278, 178, 89, 23);
