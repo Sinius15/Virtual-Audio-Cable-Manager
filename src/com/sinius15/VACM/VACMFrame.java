@@ -92,11 +92,11 @@ public class VACMFrame extends JFrame {
 			trayIcon.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					tray.remove(trayIcon);
-					setVisible(true);
-					requestFocus();
+//					super.mouseClicked(e);
+//					tray.remove(trayIcon);
+//					setVisible(true);
+//					requestFocus();
 				}
-				
 			});
 			
 			addWindowStateListener(new WindowStateListener() {
