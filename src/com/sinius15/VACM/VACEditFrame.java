@@ -42,7 +42,7 @@ public class VACEditFrame extends JFrame {
 		lblWaveIn.setBounds(10, 14, 75, 14);
 		contentPane.add(lblWaveIn);
 		
-		JComboBox<String> waveIn = new JComboBox<String>(Util.getInputDeviceNames());
+		JComboBox<String> waveIn = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getInputDeviceNames()));
 		waveIn.setBounds(65, 11, 237, 20);
 		contentPane.add(waveIn);
 		
@@ -50,7 +50,7 @@ public class VACEditFrame extends JFrame {
 		lblWaveOut.setBounds(10, 42, 75, 14);
 		contentPane.add(lblWaveOut);
 		
-		JComboBox<String> waveOut = new JComboBox<String>(Util.getOutputDeviceNames());
+		JComboBox<String> waveOut = new JComboBox<String>(new DefaultComboBoxModel<String>(Util.getOutputDeviceNames()));
 		waveOut.setBounds(65, 39, 237, 20);
 		contentPane.add(waveOut);
 		
