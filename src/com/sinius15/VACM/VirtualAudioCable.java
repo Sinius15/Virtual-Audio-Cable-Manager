@@ -8,7 +8,7 @@ public class VirtualAudioCable {
 	
 	private String name;
 	
-	private HashMap<String, String> arguments = new HashMap<String, String>();
+	private HashMap<Argument, String> arguments = new HashMap<String, String>();
 	
 	/**
 	 * Creates a new {@link VirtualAudioCable}
@@ -30,7 +30,7 @@ public class VirtualAudioCable {
 		String[] args = new String[arguments.size()];
 		args[0] = "start /min audiorepeater.exe";
 		int i = 0;
-		for(String key : arguments.keySet()){
+		for(Argument key : arguments.keySet()){
 			args[i] = "/" + key;
 			if(arguments.get(i) != null){ //argument has a second parameter
 				if(arguments.get(i).matches("[0-9]+"))  //argument is a number
