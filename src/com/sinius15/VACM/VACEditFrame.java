@@ -138,15 +138,9 @@ public class VACEditFrame extends JFrame {
 				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
 				doWhatYouGotTODO((String) waveOut.getSelectedItem(), Argument.Output, newCab, false);
 				doWhatYouGotTODO((String) sampleRate.getSelectedItem(), Argument.SamplingRate, newCab, true);
+				doWhatYouGotTODO((String) bitsPerSample.getSelectedItem(), Argument.BitsPerSample, newCab, true);
+				doWhatYouGotTODO((String) bufferMs.getSelectedItem(), Argument.BufferMs, newCab, true);
 				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
-				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
-				doWhatYouGotTODO((String) waveIn.getSelectedItem(), Argument.Input, newCab, false);
-				
-				//Bits Per Sample
-				a = (String)bitsPerSample.getSelectedItem();
-				if(checkInt(a)) return;
-				if(!a.equals("16"))
-					newCab.setArgument(Argument.BitsPerSample, a);
 				
 				//Bits Per Sample
 				a = (String)bufferMs.getSelectedItem();
