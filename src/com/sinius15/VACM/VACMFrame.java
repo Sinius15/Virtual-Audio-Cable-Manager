@@ -1,7 +1,17 @@
 package com.sinius15.VACM;
 
+import java.awt.AWTException;
 import java.awt.BorderLayout;
-import java.awt.Rectangle;
+import java.awt.Image;
+import java.awt.MenuItem;
+import java.awt.PopupMenu;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowStateListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +21,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 public class VACMFrame extends JFrame{
+	
+	TrayIcon trayIcon;
+    SystemTray tray;
+	
 	public VACMFrame() {
 		BorderLayout borderLayout = (BorderLayout) getContentPane().getLayout();
 		borderLayout.setVgap(5);
@@ -44,6 +58,69 @@ public class VACMFrame extends JFrame{
 		
 		JButton btnStopAll = new JButton("Stop All");
 		panel.add(btnStopAll);
+		
+		
+        if(SystemTray.isSupported()){
+            System.out.println("system tray supported");
+            tray=SystemTray.getSystemTray();
+
+            Image image=Toolkit.getDefaultToolkit().getImage("/media/faisal/DukeImg/Duke256.png");
+            ActionListener exitListener=new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Exiting....");
+                    System.exit(0);
+                }
+            };
+            PopupMenu popup=new PopupMenu();
+            MenuItem defaultItem=new MenuItem("Exit");
+            defaultItem.addActionListener(exitListener);
+            popup.add(defaultItem);
+            defaultItem=new MenuItem("Open");
+            defaultItem.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    setVisible(true);
+                    setExtendedState(JFrame.NORMAL);
+                }
+            });
+            popup.add(defaultItem);
+            trayIcon=new TrayIcon(image, "SystemTray Demo", popup);
+            trayIcon.setImageAutoSize(true);
+        }else{
+            System.out.println("system tray not supported");
+        }
+        addWindowStateListener(new WindowStateListener() {
+            public void windowStateChanged(WindowEvent e) {
+                if(e.getNewState()==ICONIFIED){
+                    try {
+                        tray.add(trayIcon);
+                        setVisible(false);
+                        System.out.println("added to SystemTray");
+                    } catch (AWTException ex) {
+                        System.out.println("unable to add to tray");
+                    }
+                }
+        if(e.getNewState()==7){
+                    try{
+            tray.add(trayIcon);
+            setVisible(false);
+            System.out.println("added to SystemTray");
+            }catch(AWTException ex){
+            System.out.println("unable to add to system tray");
+        }
+            }
+        if(e.getNewState()==MAXIMIZED_BOTH){
+                    tray.remove(trayIcon);
+                    setVisible(true);
+                    System.out.println("Tray icon removed");
+                }
+                if(e.getNewState()==NORMAL){
+                    tray.remove(trayIcon);
+                    setVisible(true);
+                    System.out.println("Tray icon removed");
+                }
+            }
+        });
+		
 	}
 
 	private static final long serialVersionUID = 2595653495897980319L;
