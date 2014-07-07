@@ -19,7 +19,11 @@ public class VirtualAudioCable {
 		if (!windowName.matches("[a-zA-Z]+"))
 			throw new IllegalArgumentException("windowName must exist of letters.");
 		arguments.put("WindowName:", "\"" + windowName + "\"");
-		this.name = windowName;
+		this.setName(windowName);
+	}
+
+	public String getName() {
+		return name;
 	}
 	
 }
