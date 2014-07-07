@@ -89,29 +89,25 @@ public class VACMFrame extends JFrame {
 					try {
 						tray.add(trayIcon);
 						setVisible(false);
-						System.out.println("added to SystemTray");
 					} catch (AWTException ex) {
-						System.out.println("unable to add to tray");
+						ex.printStackTrace();
 					}
 				}
 				if (e.getNewState() == 7) {
 					try {
 						tray.add(trayIcon);
 						setVisible(false);
-						System.out.println("added to SystemTray");
 					} catch (AWTException ex) {
-						System.out.println("unable to add to system tray");
+						ex.printStackTrace();
 					}
 				}
 				if (e.getNewState() == MAXIMIZED_BOTH) {
 					tray.remove(trayIcon);
 					setVisible(true);
-					System.out.println("Tray icon removed");
 				}
 				if (e.getNewState() == NORMAL) {
 					tray.remove(trayIcon);
 					setVisible(true);
-					System.out.println("Tray icon removed");
 				}
 			}
 		});
