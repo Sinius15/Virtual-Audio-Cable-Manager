@@ -6,7 +6,23 @@ import javax.sound.sampled.Mixer.Info;
 public class Util {
 	
 	public static String[] getInputDeviceNames(){
+		Info[] mixerInfo = AudioSystem.getMixerInfo();
+
+		int amount = 0;
+		for(Info i : mixerInfo){
+			if(i.getDescription().equals("Direct Audio Device: DirectSound Capture"))
+				amount++;
+		}
+		String[] out = new String[amount];
+		amount = 0;
+		for(Info i : mixerInfo){
+			if(i.getDescription().equals("Direct Audio Device: DirectSound Capture")){
+				out[amount] = i.getName();
+				amount++;
+			}
+		}
 		
+		return out;
 	}
 	
 	public static String[] getOutputDeviceNames(){
@@ -30,4 +46,3 @@ public class Util {
 	}
 	
 }
-//"Direct Audio Device: DirectSound Capture"
