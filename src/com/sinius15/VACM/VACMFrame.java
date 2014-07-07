@@ -16,7 +16,7 @@ public class VACMFrame extends JFrame{
 		borderLayout.setVgap(5);
 		borderLayout.setHgap(5);
 		setTitle("Virtual Audio Cable Manager");
-		setBounds(new Rectangle(0, 0, 100, 100));
+		setBounds(100, 100, 402, 403);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
