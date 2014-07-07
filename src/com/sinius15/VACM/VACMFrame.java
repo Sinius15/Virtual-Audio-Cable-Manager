@@ -73,7 +73,7 @@ public class VACMFrame extends JFrame {
 		JLabel lblAudioRepeaterExcecutable = new JLabel("Audio Repeater Excecutable");
 		top.add(lblAudioRepeaterExcecutable);
 		
-		textField = new JTextField();
+		textField = new JTextField("C:\\Program Files\\Virtual Audio Cable\\audiorepeater.exe");
 		top.add(textField);
 		textField.setColumns(28);
 		
