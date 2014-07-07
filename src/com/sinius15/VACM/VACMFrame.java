@@ -108,9 +108,19 @@ public class VACMFrame extends JFrame {
 		bottom.add(btnEdit);
 		
 		JButton btnStartAll = new JButton("Start All");
+		btnStartAll.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VirtualAudioCableManager.getManager().startAllCables();
+			}
+		});
 		bottom.add(btnStartAll);
 		
 		JButton btnStopAll = new JButton("Stop All");
+		btnStopAll.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VirtualAudioCableManager.getManager().stopAllCables();
+			}
+		});
 		bottom.add(btnStopAll);
 		
 		JPanel top = new JPanel();
