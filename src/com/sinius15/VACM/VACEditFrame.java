@@ -170,13 +170,11 @@ public class VACEditFrame extends JFrame {
 				
 				//Channel Config
 				a = (String) channelConfig.getSelectedItem();
-				if(checkInt(a)) return;
 				if(!a.equals("Stereo"))
 					newCab.setArgument(Argument.ChanCfg, a);
 				
-				//Channel Config
+				//Priority
 				a = (String) priority.getSelectedItem();
-				if(checkInt(a)) return;
 				if(!a.equals("Normal"))
 					newCab.setArgument(Argument.Priority, a);
 				
