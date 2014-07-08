@@ -244,7 +244,25 @@ public class VACMFrame extends JFrame {
 				}
 			});
 			
+			MenuItem closeCables = new MenuItem("Close all cables");
+			restart.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					VirtualAudioCableManager.getManager().stopAllCables();
+				}
+			});
+			
+			MenuItem startCables = new MenuItem("Start all cables");
+			restart.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					VirtualAudioCableManager.getManager().startAllCables();
+				}
+			});
+			
 			popupMenu.add(restart);
+			popupMenu.add(closeCables);
+			popupMenu.add(startCables);
 			popupMenu.add(restore);
 			popupMenu.add(exit);
 			
