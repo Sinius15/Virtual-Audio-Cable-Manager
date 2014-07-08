@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 public class VirtualAudioCableManager {
@@ -14,13 +13,8 @@ public class VirtualAudioCableManager {
 	public VACMFrame frame;
 	
 	public VirtualAudioCableManager(){
-		SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				frame = new VACMFrame();
-				frame.setVisible(true);
-			}
-		});
+		frame = new VACMFrame();
+		frame.setVisible(true);
 	}
 	
 	public void startAllCables(){
