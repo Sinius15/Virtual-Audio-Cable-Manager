@@ -30,7 +30,8 @@ public class VirtualAudioCable {
 
 	public void startAudioCable(){
 		ArrayList<String> args = new ArrayList<>();
-		args.add("cmd");
+		args.add("cmd.exe");
+		args.add("/c");
 		args.add("start");
 		args.add("/min");
 		args.add("audiorepeater.exe");
