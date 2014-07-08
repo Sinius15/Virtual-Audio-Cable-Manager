@@ -6,3 +6,24 @@ You can use this application to manage multable Audio Repeaters. It lest you aut
 If you want to know how to use this application, visit the wiki!
 
 Also, while creating this application, i automaticly committed every 30 seconds the code changes. This is why this project has so much commits.
+
+From now on:
+VAC = Virtual Audio Cable
+VACM = Virtual Audio Cable Manager
+
+
+How to install?
+----------------
+To use this VACM you first need VAC. You can download VAC at [the official website](http://software.muzychenko.net/eng/vac.htm#download). If you have VAC installed, you have to download VACM.
+
+How to use?
+----------------
+
+Arguments?!
+----------------
+
+License
+----------------
+
+Bugs
+----------------
