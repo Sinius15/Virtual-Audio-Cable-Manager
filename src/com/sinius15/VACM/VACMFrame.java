@@ -167,6 +167,24 @@ public class VACMFrame extends JFrame {
 		mnFile.add(mntmSaveConfiguration);
 		
 		JMenuItem mntmLoadConfiguration = new JMenuItem("Load Configuration");
+		mntmLoadConfiguration.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser filechooser = new JFileChooser();
+				filechooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				filechooser.setAcceptAllFileFilterUsed(true);
+				filechooser.setDialogType(JFileChooser.OPEN_DIALOG);
+				int returnErrorNR = filechooser.showSaveDialog(thiss);
+				if(returnErrorNR != 0)
+					return;
+				try {
+					ConfigLoader.loadData(filechooser.getSelectedFile());
+				} catch (Exception e1) {
+					e1.printStackTrace();
+					JOptionPane.showMessageDialog(thiss, "Sometihng went wrong while loading the file." + System.lineSeparator() 
+							+ e1.getLocalizedMessage(), "Fatal Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		mnFile.add(mntmLoadConfiguration);
 		
 		JMenu mnHelp = new JMenu("Help");
