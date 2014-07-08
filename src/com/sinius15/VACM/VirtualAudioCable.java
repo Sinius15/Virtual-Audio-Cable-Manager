@@ -31,10 +31,11 @@ public class VirtualAudioCable {
 	public void startAudioCable(){
 		ArrayList<String> args = new ArrayList<>();
 		args.add("cmd.exe");
-		//args.add("/c");
+		args.add("/c");
 		args.add("start");
 		args.add("/min");
-		args.add("audiorepeater.exe");
+		
+		String argumentString = "";
 		for(Argument key : arguments.keySet()){
 			String bui = "/" + key;
 			if(arguments.get(key) != null){ //argument has a second parameter
@@ -43,8 +44,10 @@ public class VirtualAudioCable {
 				else  //argument is a string and needs "
 					bui += ": " + "'" + arguments.get(key) + "'";
 			}
-			args.add(bui);
+			argumentString += " " + bui;
 		}
+		
+		args.add("audiorepeater.exe" + argumentString);
 		
 		ProcessBuilder builder = new ProcessBuilder(args);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
