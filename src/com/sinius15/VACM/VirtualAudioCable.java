@@ -3,6 +3,7 @@ package com.sinius15.VACM;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class VirtualAudioCable {
@@ -29,27 +30,30 @@ public class VirtualAudioCable {
 
 	public void startAudioCable(){
 		ArrayList<String> args = new ArrayList<>();
+		args.add("cmd");
 		args.add("start");
 		args.add("/min");
 		args.add("audiorepeater.exe");
-		int i = 1;
 		for(Argument key : arguments.keySet()){
 			String bui = "/" + key;
-			if(arguments.get(i) != null){ //argument has a second parameter
-				if(arguments.get(i).matches("[0-9]+"))  //argument is a number
-					bui += ": " + arguments.get(i);
+			if(arguments.get(key) != null){ //argument has a second parameter
+				if(arguments.get(key).matches("[0-9]+"))  //argument is a number
+					bui += ": " + arguments.get(key);
 				else  //argument is a string and needs "
-					bui += ": " + "\"" + arguments.get(i) + "\"";
+					bui += ": " + "\"" + arguments.get(key) + "\"";
 			}
 			args.add(bui);
-			i++;
 		}
 		
 		ProcessBuilder builder = new ProcessBuilder(args);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
 		
+		System.out.println(Arrays.toString(args.toArray()));
+		
 		try {
 			builder.start();
+			
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
