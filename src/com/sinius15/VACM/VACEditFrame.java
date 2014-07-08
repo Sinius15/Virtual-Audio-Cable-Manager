@@ -172,7 +172,7 @@ public class VACEditFrame extends JFrame {
 	private void doWhatYouGotTODO(String str, Argument arg, VirtualAudioCable cable, boolean isInt){
 		if(isInt)
 			if(checkInt(str)) return;
-		if(str.equals(arg))
+		if(str.equals(arg.getDefaul()))
 			return;
 		cable.setArgument(arg, str);
 	}
