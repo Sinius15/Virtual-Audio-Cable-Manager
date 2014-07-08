@@ -11,6 +11,8 @@ public class VirtualAudioCableManager {
 	
 	ArrayList<VirtualAudioCable> cables = new ArrayList<>();
 	
+	public static final String VERSION = "v1.1";
+	
 	public VACMFrame frame;
 	
 	public VirtualAudioCableManager() {

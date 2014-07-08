@@ -195,7 +195,8 @@ public class VACMFrame extends JFrame {
 		JMenuItem mntmAboutVacm = new JMenuItem("About VacM");
 		mntmAboutVacm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(thiss, "Insert verry long about text here.", "About", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(thiss, "Virtual Audio Cable Manager Version " + VirtualAudioCableManager.VERSION + System.lineSeparator() + 
+						"All documentatinon can be found at https://github.com/Sinius15/Virtual-Audio-Cable-Manager", "About", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		mnHelp.add(mntmAboutVacm);
