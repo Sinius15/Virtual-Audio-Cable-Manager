@@ -57,7 +57,10 @@ public class VirtualAudioCableManager {
 		
 		for(int i = 0; i < args.length; i++){
 			if(args[i].startsWith("/")){
-				
+				String arg = args[i].replace("/", "");
+				if(arg.equalsIgnoreCase("config:")){
+					
+				}
 			}
 		}
 		
