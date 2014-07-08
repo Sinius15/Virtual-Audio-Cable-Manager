@@ -19,7 +19,7 @@ public class ConfigLoader {
 		
 		for(String key : data.keySet()){
 			if(key.startsWith("cable") && key.endsWith("WindowName")){  //we found a new cable!
-				String name = key.split(".")[1];
+				String name = key.split("\\.")[1];
 				VirtualAudioCable cable = new VirtualAudioCable(name);
 				for(Argument arg : Argument.values()){
 					if(data.getString("cable." + name + "." + arg.getTitle()) != null){
