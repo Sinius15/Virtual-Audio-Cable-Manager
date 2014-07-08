@@ -27,8 +27,10 @@ public class ConfigLoader {
 			for(Argument arg : cable.arguments.keySet()){
 				if(arg.equals(Argument.Autostart))
 					continue;
-				data.addString(arg.getTitle(), cable.getArgument(arg));
+				data.addString("cable." +cable.getName() + "." + arg.getTitle(), cable.getArgument(arg));
 			}
 		}
+		data.Save(file);
+		
 	}
 }
