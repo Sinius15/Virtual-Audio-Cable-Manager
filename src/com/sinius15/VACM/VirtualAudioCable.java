@@ -29,9 +29,6 @@ public class VirtualAudioCable {
 	}
 
 	public void startAudioCable(){
-		ArrayList<String> args = new ArrayList<>();
-		args.add("cmd.exe");
-		args.add("/c");
 		
 		String argumentString = "";
 		for(Argument key : arguments.keySet()){
@@ -44,13 +41,10 @@ public class VirtualAudioCable {
 			}
 			argumentString += " " + bui;
 		}
+
 		
-		args.add("start /min audiorepeater.exe" + argumentString);
-		
-		ProcessBuilder builder = new ProcessBuilder(args);
+		ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start /min audiorepeater.exe" + argumentString);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
-		
-		System.out.println(Arrays.toString(args.toArray()));
 		
 		try {
 			builder.start();
@@ -62,7 +56,7 @@ public class VirtualAudioCable {
 	}
 	
 	public void stopAudioCable(){
-		ProcessBuilder builder = new ProcessBuilder("start audiorepeater.exe /CloseInstance: " + name);
+		ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start audiorepeater.exe /CloseInstance: " + name);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
 		
 		try {
