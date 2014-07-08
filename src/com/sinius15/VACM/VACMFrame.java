@@ -157,6 +157,11 @@ public class VACMFrame extends JFrame {
 		mnHelp.add(mntmAboutVacm);
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		mnHelp.add(mntmExit);
 			
 		
