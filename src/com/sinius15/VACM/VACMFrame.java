@@ -18,6 +18,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -147,6 +148,14 @@ public class VACMFrame extends JFrame {
 		JMenuItem mntmSaveConfiguration = new JMenuItem("Save Configuration");
 		mntmSaveConfiguration.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JFileChooser filechooser = new JFileChooser();
+				filechooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				filechooser.setAcceptAllFileFilterUsed(true);
+				filechooser.setDialogType(JFileChooser.SAVE_DIALOG);
+				int returnErrorNR = filechooser.showSaveDialog(thiss);
+				if(returnErrorNR != 0)
+					return;
+				String path = filechooser.getSelectedFile().getAbsolutePath();
 				
 			}
 		});
