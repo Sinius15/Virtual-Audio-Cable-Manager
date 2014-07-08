@@ -26,6 +26,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class VACMFrame extends JFrame {
 	
@@ -39,7 +42,7 @@ public class VACMFrame extends JFrame {
 		borderLayout.setVgap(5);
 		borderLayout.setHgap(5);
 		setTitle("Virtual Audio Cable Manager");
-		setBounds(100, 100, 402, 403);
+		setBounds(100, 100, 402, 414);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		JScrollPane center = new JScrollPane();
@@ -140,6 +143,27 @@ public class VACMFrame extends JFrame {
 		try {
 			icon = ImageIO.read(VirtualAudioCableManager.class.getResourceAsStream("icon.png"));
 			setIconImage(icon);
+			
+			JMenuBar menuBar = new JMenuBar();
+			setJMenuBar(menuBar);
+			
+			JMenu mnFile = new JMenu("File");
+			menuBar.add(mnFile);
+			
+			JMenuItem mntmSaveConfiguration = new JMenuItem("Save Configuration");
+			mnFile.add(mntmSaveConfiguration);
+			
+			JMenuItem mntmLoadConfiguration = new JMenuItem("Load Configuration");
+			mnFile.add(mntmLoadConfiguration);
+			
+			JMenu mnHelp = new JMenu("Help");
+			menuBar.add(mnHelp);
+			
+			JMenuItem mntmAboutVacm = new JMenuItem("About VacM");
+			mnHelp.add(mntmAboutVacm);
+			
+			JMenuItem mntmExit = new JMenuItem("Exit");
+			mnHelp.add(mntmExit);
 		} catch (IOException e1) {}
 		
 		if (SystemTray.isSupported()) {
