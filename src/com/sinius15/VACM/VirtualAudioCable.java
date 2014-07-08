@@ -8,7 +8,7 @@ public class VirtualAudioCable {
 	
 	private String name;
 	
-	private HashMap<Argument, String> arguments = new HashMap<Argument, String>();
+	public HashMap<Argument, String> arguments = new HashMap<Argument, String>();
 	
 	/**
 	 * Creates a new {@link VirtualAudioCable}
