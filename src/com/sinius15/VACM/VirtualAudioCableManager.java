@@ -1,5 +1,7 @@
 package com.sinius15.VACM;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import javax.swing.SwingUtilities;
@@ -55,16 +57,23 @@ public class VirtualAudioCableManager {
             e.printStackTrace();
         }
 		
-		for(int i = 0; i < args.length; i++){
-			if(args[i].startsWith("/")){
-				String arg = args[i].replace("/", "");
-				if(arg.equalsIgnoreCase("config:")){
-					
-				}
+		thiss = new VirtualAudioCableManager();
+		
+		if(args.length>0){
+			try {
+				ConfigLoader.loadData(new File(args[0]));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
 			}
 		}
+		for(int i = 1; i < args.length; i++){
+			if(args[i].equalsIgnoreCase("autoStart"))
+				getManager().startAllCables();
+			if(args[i].equalsIgnoreCase("autoStop"))
+				getManager().stopAllCables();
+		}
 		
-		thiss = new VirtualAudioCableManager();
+		
 	}
 
 	
