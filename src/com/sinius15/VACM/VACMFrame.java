@@ -138,32 +138,32 @@ public class VACMFrame extends JFrame {
 		top.add(txtCprogramFilesvirtualAudio);
 		txtCprogramFilesvirtualAudio.setColumns(28);
 		
-		BufferedImage icon = null;
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
 		
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmSaveConfiguration = new JMenuItem("Save Configuration");
+		mnFile.add(mntmSaveConfiguration);
+		
+		JMenuItem mntmLoadConfiguration = new JMenuItem("Load Configuration");
+		mnFile.add(mntmLoadConfiguration);
+		
+		JMenu mnHelp = new JMenu("Help");
+		menuBar.add(mnHelp);
+		
+		JMenuItem mntmAboutVacm = new JMenuItem("About VacM");
+		mnHelp.add(mntmAboutVacm);
+		
+		JMenuItem mntmExit = new JMenuItem("Exit");
+		mnHelp.add(mntmExit);
+			
+		
+		BufferedImage icon = null;
 		try {
 			icon = ImageIO.read(VirtualAudioCableManager.class.getResourceAsStream("icon.png"));
 			setIconImage(icon);
-			
-			JMenuBar menuBar = new JMenuBar();
-			setJMenuBar(menuBar);
-			
-			JMenu mnFile = new JMenu("File");
-			menuBar.add(mnFile);
-			
-			JMenuItem mntmSaveConfiguration = new JMenuItem("Save Configuration");
-			mnFile.add(mntmSaveConfiguration);
-			
-			JMenuItem mntmLoadConfiguration = new JMenuItem("Load Configuration");
-			mnFile.add(mntmLoadConfiguration);
-			
-			JMenu mnHelp = new JMenu("Help");
-			menuBar.add(mnHelp);
-			
-			JMenuItem mntmAboutVacm = new JMenuItem("About VacM");
-			mnHelp.add(mntmAboutVacm);
-			
-			JMenuItem mntmExit = new JMenuItem("Exit");
-			mnHelp.add(mntmExit);
 		} catch (IOException e1) {}
 		
 		if (SystemTray.isSupported()) {
