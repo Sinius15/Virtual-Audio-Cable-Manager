@@ -5,9 +5,9 @@ import java.io.FileNotFoundException;
 
 public class ConfigLoader {
 	
-	public static Exception loadData(File file){
-		if(file.exists())
-			return new FileNotFoundException("Could not find file");
+	public static Exception loadData(File file) throws FileNotFoundException{
+		if(!file.exists())
+			throw new FileNotFoundException("Could not find file");
 		
 		return null;
 	}
