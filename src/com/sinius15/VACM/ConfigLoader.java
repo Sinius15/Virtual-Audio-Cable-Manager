@@ -21,6 +21,14 @@ public class ConfigLoader {
 	}
 	
 	public static void saveData(File file){
-		
+		YAMLFile data = new YAMLFile(true);
+		data.addString("exeFolder", VirtualAudioCableManager.getManager().frame.getExField().getText());
+		for(VirtualAudioCable cable: VirtualAudioCableManager.getManager().cables){
+			for(Argument arg : cable.arguments.keySet()){
+				if(arg.equals(Argument.Autostart))
+					continue;
+				data.addString(arg.getTitle(), cable.getArgument(arg));
+			}
+		}
 	}
 }
