@@ -54,6 +54,13 @@ public class VirtualAudioCableManager {
         }catch(Exception e){
             e.printStackTrace();
         }
+		
+		for(int i = 0; i < args.length; i++){
+			if(args[i].startsWith("/")){
+				
+			}
+		}
+		
 		thiss = new VirtualAudioCableManager();
 	}
 
