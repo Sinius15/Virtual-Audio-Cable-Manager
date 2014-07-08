@@ -227,10 +227,6 @@ public class YAMLFile {
     }
      
      
-     
-     
-     
-     
     //getters and setters for variables
      
     public String getString(String path){
