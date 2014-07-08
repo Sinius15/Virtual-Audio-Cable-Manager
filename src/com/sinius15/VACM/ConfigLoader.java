@@ -23,10 +23,10 @@ public class ConfigLoader {
 				VirtualAudioCable cable = new VirtualAudioCable(name);
 				for(Argument arg : Argument.values()){
 					if(data.getString("cable." + name + "." + arg.getTitle()) != null){
-						
+						cable.setArgument(arg, data.getString("cable." + name + "." + arg.getTitle()));
 					}
 				}
-				
+				VirtualAudioCableManager.getManager().cables.add(cable);
 			}
 		}
 		
