@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
  
@@ -275,5 +276,9 @@ public class YAMLFile {
              
          
     }
+
+	public Set<String> keySet() {
+		return data.keySet();
+	}
      
 }
