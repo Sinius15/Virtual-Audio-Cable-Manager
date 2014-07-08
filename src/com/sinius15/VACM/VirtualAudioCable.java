@@ -42,7 +42,7 @@ public class VirtualAudioCable {
 				if(arguments.get(key).matches("[0-9]+"))  //argument is a number
 					bui += ": " + arguments.get(key);
 				else  //argument is a string and needs "
-					bui += ": " + "'" + arguments.get(key) + "'";
+					bui += ": " + "\"" + arguments.get(key) + "\"";
 			}
 			argumentString += " " + bui;
 		}
