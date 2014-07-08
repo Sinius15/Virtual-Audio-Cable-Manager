@@ -7,9 +7,9 @@ import com.sinius15.api.YAMLFile;
 
 public class ConfigLoader {
 	
-	public static Exception loadData(File file) throws FileNotFoundException{
+	public static void loadData(File file) throws FileNotFoundException{
 		if(!file.exists())
-			throw new FileNotFoundException("Could not find file");
+			throw new FileNotFoundException("Could not find file.");
 		YAMLFile data = new YAMLFile(true);
 		data.Load(file);
 		
@@ -29,8 +29,7 @@ public class ConfigLoader {
 				VirtualAudioCableManager.getManager().cables.add(cable);
 			}
 		}
-		
-		return null;
+		VirtualAudioCableManager.getManager().frame.updateList();
 	}
 	
 	public static void saveData(File file) throws Exception{
