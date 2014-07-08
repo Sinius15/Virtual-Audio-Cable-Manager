@@ -32,8 +32,6 @@ public class VirtualAudioCable {
 		ArrayList<String> args = new ArrayList<>();
 		args.add("cmd.exe");
 		args.add("/c");
-		args.add("start");
-		args.add("/min");
 		
 		String argumentString = "";
 		for(Argument key : arguments.keySet()){
@@ -47,7 +45,7 @@ public class VirtualAudioCable {
 			argumentString += " " + bui;
 		}
 		
-		args.add("audiorepeater.exe" + argumentString);
+		args.add("start /min audiorepeater.exe" + argumentString);
 		
 		ProcessBuilder builder = new ProcessBuilder(args);
 		builder.directory(new File(VirtualAudioCableManager.getManager().frame.getExField().getText()));
