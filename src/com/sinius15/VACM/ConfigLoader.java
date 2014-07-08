@@ -14,7 +14,7 @@ public class ConfigLoader {
 		data.Load(file);
 		
 		for(String key : data.keySet()){
-			
+			System.out.println(key);
 		}
 		
 		return null;
