@@ -15,7 +15,7 @@ public class VirtualAudioCableManager {
 	
 	public VirtualAudioCableManager(){
 		frame = new VACMFrame();
-		frame.setVisible(true);
+		
 	}
 	
 	public void startAllCables(){
@@ -71,7 +71,7 @@ public class VirtualAudioCableManager {
 			if(args[i].equalsIgnoreCase("min"))
 				getManager().frame.setExtendedState(JFrame.ICONIFIED);
 		}
-		
+		getManager().frame.setVisible(true);
 		
 	}
 
