@@ -20,7 +20,7 @@ public class ConfigLoader {
 		return null;
 	}
 	
-	public static void saveData(File file){
+	public static void saveData(File file) throws Exception{
 		YAMLFile data = new YAMLFile(true);
 		data.addString("exeFolder", VirtualAudioCableManager.getManager().frame.getExField().getText());
 		for(VirtualAudioCable cable: VirtualAudioCableManager.getManager().cables){
@@ -31,6 +31,5 @@ public class ConfigLoader {
 			}
 		}
 		data.Save(file);
-		
 	}
 }
