@@ -155,8 +155,14 @@ public class VACMFrame extends JFrame {
 				int returnErrorNR = filechooser.showSaveDialog(thiss);
 				if(returnErrorNR != 0)
 					return;
-				String path = filechooser.getSelectedFile().getAbsolutePath();
-				
+				try {
+					ConfigLoader.saveData(filechooser.getSelectedFile());
+				} catch (Exception e1) {
+					e1.printStackTrace();
+					JOptionPane.showMessageDialog(thiss, "Sometihng went wrong while saving the file." + System.lineSeparator() 
+							+ e1.getLocalizedMessage(), "Fatal Error", JOptionPane.ERROR_MESSAGE);
+					
+				}
 			}
 		});
 		mnFile.add(mntmSaveConfiguration);
