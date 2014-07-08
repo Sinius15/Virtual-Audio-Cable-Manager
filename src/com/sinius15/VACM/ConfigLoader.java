@@ -13,8 +13,14 @@ public class ConfigLoader {
 		YAMLFile data = new YAMLFile(true);
 		data.Load(file);
 		
+		VirtualAudioCableManager.getManager().frame.getExField().setText(data.getString("exeFolder"));
+		
 		for(String key : data.keySet()){
-			System.out.println(key);
+			if(key.startsWith("cable") && key.endsWith("WindowName")){  //we found a new cable!
+				
+				
+				
+			}
 		}
 		
 		return null;
