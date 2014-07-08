@@ -156,7 +156,7 @@ public class VACMFrame extends JFrame {
 		JMenuItem mntmAboutVacm = new JMenuItem("About VacM");
 		mntmAboutVacm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(thiss, "Messagegee");
+				JOptionPane.showMessageDialog(thiss, "Insert verry long about text here.", "About", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		mnHelp.add(mntmAboutVacm);
