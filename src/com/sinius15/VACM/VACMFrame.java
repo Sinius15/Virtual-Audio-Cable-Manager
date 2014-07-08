@@ -131,9 +131,9 @@ public class VACMFrame extends JFrame {
 		JLabel lblAudioRepeaterExcecutable = new JLabel("Audio Repeater Excecutable");
 		top.add(lblAudioRepeaterExcecutable);
 		
-		textField = new JTextField("C:\\Program Files\\Virtual Audio Cable\\audiorepeater.exe");
-		top.add(textField);
-		textField.setColumns(28);
+		txtCprogramFilesvirtualAudio = new JTextField("C:\\Program Files\\Virtual Audio Cable");
+		top.add(txtCprogramFilesvirtualAudio);
+		txtCprogramFilesvirtualAudio.setColumns(28);
 		
 		BufferedImage icon = null;
 		
@@ -222,10 +222,10 @@ public class VACMFrame extends JFrame {
 	}
 	
 	private static final long serialVersionUID = 2595653495897980319L;
-	private JTextField textField;
+	private JTextField txtCprogramFilesvirtualAudio;
 	private JList<VirtualAudioCable> cableList;
 	
 	public JTextField getExField() {
-		return textField;
+		return txtCprogramFilesvirtualAudio;
 	}
 }
