@@ -67,6 +67,8 @@ public class VACMFrame extends JFrame {
 						"What is the title of this new AudioRepeater? " + System.lineSeparator()
 								+ "The name must exist of only letters and must be uniqe", "name?",
 						JOptionPane.QUESTION_MESSAGE);
+				if(name == null || name.equals(""))
+					return;
 				if (!name.matches("[a-zA-Z]+")) {
 					JOptionPane.showMessageDialog(thiss,
 							"The name must exist of only letters!", "Fatal Error!",
