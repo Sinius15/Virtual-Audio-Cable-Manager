@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 public class VirtualAudioCableManager {
@@ -65,6 +66,10 @@ public class VirtualAudioCableManager {
 				getManager().startAllCables();
 			if(args[i].equalsIgnoreCase("autoStop"))
 				getManager().stopAllCables();
+			if(args[i].equalsIgnoreCase("quit"))
+				System.exit(0);
+			if(args[i].equalsIgnoreCase("min"))
+				getManager().frame.setExtendedState(JFrame.ICONIFIED);
 		}
 		
 		
