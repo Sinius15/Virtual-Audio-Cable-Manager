@@ -2,6 +2,7 @@ package com.sinius15.VACM;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class VirtualAudioCable {
@@ -27,7 +28,7 @@ public class VirtualAudioCable {
 	}
 
 	public void startAudioCable(){
-		String[] args = new String[arguments.size()+1];
+		ArrayList<String> args = new ArrayList<>();
 		args[0] = "start /min audiorepeater.exe";
 		int i = 1;
 		for(Argument key : arguments.keySet()){
