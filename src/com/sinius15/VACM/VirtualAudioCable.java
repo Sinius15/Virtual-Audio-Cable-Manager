@@ -29,16 +29,19 @@ public class VirtualAudioCable {
 
 	public void startAudioCable(){
 		ArrayList<String> args = new ArrayList<>();
-		args[0] = "start /min audiorepeater.exe";
+		args.add("start");
+		args.add("/min");
+		args.add("audiorepeater.exe");
 		int i = 1;
 		for(Argument key : arguments.keySet()){
-			args[i] = "/" + key;
+			String bui = "/" + key;
 			if(arguments.get(i) != null){ //argument has a second parameter
 				if(arguments.get(i).matches("[0-9]+"))  //argument is a number
-					args[i] += ": " + arguments.get(i);
+					bui += ": " + arguments.get(i);
 				else  //argument is a string and needs "
-					args[i] += ": " + "\"" + arguments.get(i) + "\"";
+					bui += ": " + "\"" + arguments.get(i) + "\"";
 			}
+			args.add(bui);
 			i++;
 		}
 		
