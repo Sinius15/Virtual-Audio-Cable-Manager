@@ -61,6 +61,7 @@ public class VirtualAudioCableManager {
 				e.printStackTrace();
 			}
 		}
+		getManager().frame.setVisible(true);
 		for(int i = 1; i < args.length; i++){
 			if(args[i].equalsIgnoreCase("autoStart"))
 				getManager().startAllCables();
@@ -71,7 +72,7 @@ public class VirtualAudioCableManager {
 			if(args[i].equalsIgnoreCase("min"))
 				getManager().frame.setExtendedState(JFrame.ICONIFIED);
 		}
-		getManager().frame.setVisible(true);
+		
 		
 	}
 
