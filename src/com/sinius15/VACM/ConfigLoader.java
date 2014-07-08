@@ -13,7 +13,8 @@ public class ConfigLoader {
 		YAMLFile data = new YAMLFile(true);
 		data.Load(file);
 		
-		VirtualAudioCableManager.getManager().frame.getExField().setText(data.getString("exeFolder"));
+		VirtualAudioCableManager.getManager().frame.getExField().setText(
+				data.getString("exeFolder"));
 		
 		VirtualAudioCableManager.getManager().cables.clear();
 		
