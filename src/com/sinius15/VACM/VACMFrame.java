@@ -145,6 +145,11 @@ public class VACMFrame extends JFrame {
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmSaveConfiguration = new JMenuItem("Save Configuration");
+		mntmSaveConfiguration.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		mnFile.add(mntmSaveConfiguration);
 		
 		JMenuItem mntmLoadConfiguration = new JMenuItem("Load Configuration");
