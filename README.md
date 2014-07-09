@@ -16,8 +16,9 @@ How to install?
 ----------------
 To use this VACM you first need VAC. You can download VAC at [the official website](http://software.muzychenko.net/eng/vac.htm#download). If you have VAC installed, you have to download VACM. Down here you can find the direct links to all the versions:
 
-| [Version 1.1](https://github.com/Sinius15/Virtual-Audio-Cable-Manager/raw/master/release/Virtual%20Audio%20Cable%20Manager%20v1.1.jar) |
+|[Version 1.2](https://github.com/Sinius15/Virtual-Audio-Cable-Manager/raw/master/release/Virtual%20Audio%20Cable%20Manager%20v1.2.jar)|
 |-------------|
+| [Version 1.1](https://github.com/Sinius15/Virtual-Audio-Cable-Manager/raw/master/release/Virtual%20Audio%20Cable%20Manager%20v1.1.jar) |
 | [Version 1.0](https://github.com/Sinius15/Virtual-Audio-Cable-Manager/raw/master/release/Virtual%20Audio%20Cable%20Manager%20v1.0.jar) |
 
 When you are done downloading, double click on the downloaded file and VACM should start up.
