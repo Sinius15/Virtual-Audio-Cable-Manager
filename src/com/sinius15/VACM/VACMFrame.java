@@ -246,7 +246,7 @@ public class VACMFrame extends JFrame {
 			});
 			
 			MenuItem closeCables = new MenuItem("Close all cables");
-			restart.addActionListener(new ActionListener() {
+			closeCables.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					VirtualAudioCableManager.getManager().stopAllCables();
@@ -254,7 +254,7 @@ public class VACMFrame extends JFrame {
 			});
 			
 			MenuItem startCables = new MenuItem("Start all cables");
-			restart.addActionListener(new ActionListener() {
+			startCables.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					VirtualAudioCableManager.getManager().startAllCables();
