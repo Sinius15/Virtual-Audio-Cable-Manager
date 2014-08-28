@@ -1,5 +1,8 @@
 package com.sinius15.VACM;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Mixer.Info;
 
@@ -8,44 +11,30 @@ public class Util {
 	public static String[] getInputDeviceNames(){
 		Info[] mixerInfo = AudioSystem.getMixerInfo();
 
-		int amount = 1;
-		for(Info i : mixerInfo){
-			if(i.getDescription().equals("Direct Audio Device: DirectSound Capture"))
-				amount++;
-		}
-		String[] out = new String[amount];
-		out[0] = "Default";
-		amount = 1;
+		List<String> ls = new ArrayList<>();
+		ls.add("Default");
 		for(Info i : mixerInfo){
 			if(i.getDescription().equals("Direct Audio Device: DirectSound Capture")){
-				out[amount] = i.getName();
-				amount++;
+				ls.add(i.getName());
 			}
 		}
-		
-		return cutLength(out, 31);
+
+		return cutLength(ls.toArray(new String[ls.size()]), 31);
 	}
 	
 	public static String[] getOutputDeviceNames(){
 		Info[] mixerInfo = AudioSystem.getMixerInfo();
 
-		int amount = 2;
-		for(Info i : mixerInfo){
-			if(i.getDescription().equals("Direct Audio Device: DirectSound Playback"))
-				amount++;
-		}
-		String[] out = new String[amount];
-		out[0] = "Default";
-		out[1] = "None";
-		amount = 2;
+		List<String> ls = new ArrayList<>();
+		ls.add("Default");
+		ls.add("None");
 		for(Info i : mixerInfo){
 			if(i.getDescription().equals("Direct Audio Device: DirectSound Playback")){
-				out[amount] = i.getName();
-				amount++;
+				ls.add(i.getName());
 			}
 		}
 		
-		return cutLength(out, 31);
+		return cutLength(ls.toArray(new String[ls.size()]), 31);
 	}
 	
 	private static String[] cutLength(String[] in, int length){
